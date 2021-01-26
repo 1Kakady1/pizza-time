@@ -1,8 +1,6 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+import React from 'react'; 
 import { 
     View,
-    Animated, 
 } from 'react-native';
 
 import { styleFlatlistpanel} from './products.styles';
@@ -10,8 +8,6 @@ import Constants from 'expo-constants';
 
 import { ProductsPanelContainer } from '../products-panel/products-panel.container';
 import { CardHorizontalPlaceholder, RenderItem } from '../card/card-horizontal/card-horizontal.placeholder';
-import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
-
 
 export const ProductsPlaceholder =  () =>{
 
@@ -22,7 +18,7 @@ export const ProductsPlaceholder =  () =>{
         <View style={styles.container}>
 
 
-            <View style={[{ height: 124, backgroundColor: "blue"}]}>
+            <View style={[{ height: 120 + Constants.statusBarHeight, backgroundColor: "blue"}]}>
                 <ProductsPanelContainer />
             </View>
 

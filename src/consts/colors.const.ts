@@ -15,7 +15,8 @@ export const gray = {
     [20]: "#FAFAFA",
     [30]: "#F1ECF2",
     [50]: '#cfcfcf',
-    [100]: '#E7E7E7'
+    [100]: '#E7E7E7',
+    [110]: "#333939"
 };
 
 export const black = {

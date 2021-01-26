@@ -9,6 +9,7 @@ import { SCREENS, SCREENS_STACK} from '../consts/screens';
 import { stylesDrawerRoute } from './styles';
 import { DrawerScreensNavigator  } from '../components/containers/drawer/drawer.component';
 import { Auth } from '../screen/auth/auth.compnent';
+import { Cart } from '../screen/cart/cart.component';
 
 
 const Stack = createStackNavigator();
@@ -26,6 +27,7 @@ const DrawerScreens = ({ style }:{style:any }) => {
                 <Stack.Screen name={SCREENS.home} component={Home} />
                 <Stack.Screen name={SCREENS.auth} component={Auth} />
                 <Stack.Screen name={SCREENS.about} component={About} />
+                <Stack.Screen name={SCREENS.cart} component={Cart} />
             </Stack.Navigator>
         </Animated.View>
     );

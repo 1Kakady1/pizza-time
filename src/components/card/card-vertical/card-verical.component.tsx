@@ -2,11 +2,11 @@ import React from 'react';
 import { View,Image,Text, TouchableOpacity} from 'react-native';
 import TextTicker from 'react-native-text-ticker';
 import { ICardVertical } from './card-vertical.model';
-import { stylesCardVerical } from "./card-vertical.styles"
+import { stylesCardVertical } from "./card-vertical.styles"
 
 export const CardVerical =  ({data, nav, height="100%",width="100%",numberOfLines=3}:ICardVertical) =>{
 
-    const styles = stylesCardVerical;
+    const styles = stylesCardVertical;
 
     return(
         <TouchableOpacity style={[{height,width, padding: 10,}]} onPress={()=>nav(data.id)}>

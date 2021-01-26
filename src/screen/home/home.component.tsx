@@ -18,11 +18,11 @@ const Home = () => {
 
             <ProductsContainer />
 
-            <ModalWindow btn={Fab} btnProps={{onPress:()=> true,label:"", icon:"cart"}} >
+            {/* <ModalWindow btn={Fab} btnProps={{onPress:()=> true,label:"", icon:"cart"}} >
                     <View>
                         <Text>У Вас нет прав доступа к данной опции. Свяжитесь с администратором для получения информации.</Text>
                     </View>
-            </ModalWindow>
+            </ModalWindow> */}
             
         </View>
     );

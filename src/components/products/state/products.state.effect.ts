@@ -26,7 +26,6 @@ export const productsSetEffect = (
                     }
 
                     if (response.data){
-                        console.log("state full",response.data)
                         return toProductsAction.productsRequestSuccess(
                             response?.data
                         );

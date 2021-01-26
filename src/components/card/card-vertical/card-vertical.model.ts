@@ -1,7 +1,7 @@
-import { ITaskExcept } from "../../task-list/state/task-list.state.model";
+import { IProductsExcept } from "../../products/state/products.state.model";
 
 export interface ICardVertical {
-    data: ITaskExcept;
+    data: IProductsExcept;
     nav: (id:string)=>void;
     height?: string | number;
     width?:  string | number;

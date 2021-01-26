@@ -16,6 +16,22 @@ export const dataHeight = (h:number, key:string = "key")=>{
     return arr
 }
 
+export const dd = (val: any, name:string="val") =>{
+    
+    console.log(`===========OPEN:${name}===============`);
+    console.log(val);
+    console.log(`===========CLOSE:${name}===============`)
+}
+
+export const debug = (value: unknown)=>{
+    const a ={
+        debugger: value,
+        time: 0
+    };
+    debugger;
+    a.time = Date.now()
+}
+
 export const dataCount = (count:number, key:string = "key")=>{
 
     let arr = [],i=0;

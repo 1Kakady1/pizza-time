@@ -12,7 +12,7 @@ export const ModalWindow = ({btn,children,btnProps}: IModalProps) => {
   const styles= stylesModal;
 
   return (
-    <View>
+    <View style={{flex: 1, position: "relative"}}>
       <Portal>
         <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={styles.container}>
           {children}

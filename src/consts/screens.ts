@@ -3,6 +3,8 @@ export const SCREENS={
     postItem: "PostItemScreen",
     about: "AboutScreen",
     auth: "AuthScreen",
+    cart: "CartScreen",
+    order: "OrderScreen"
 }
 export const SCREENS_STACK={
     drawer: "DrawerScreen",

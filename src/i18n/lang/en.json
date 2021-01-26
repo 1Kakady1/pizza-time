@@ -15,6 +15,7 @@
     "close": "close",
     "menu.home": "Home",
     "menu.about":  "About",
+    "menu.cart":  "Cart",
     "page.post.load-data":"Updating data",
     "page.post.empty":"There is nothing yet",
     "page.post.slider": "New",

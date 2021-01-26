@@ -15,6 +15,7 @@
     "close": "закрыта",
     "menu.home": "Главная",
     "menu.about":  "О нас",
+    "menu.cart":  "Корзина",
     "page.post.load-data": "Обновляем данные",
     "page.post.empty": "Пока нечего нет",
     "page.post.slider": "Новое",

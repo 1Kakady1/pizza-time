@@ -2,6 +2,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
+    "debug": "expo start && npm run react-devtools",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
@@ -26,6 +27,7 @@
     "i18next": "^19.8.4",
     "lodash": "^4.17.20",
     "react": "~16.11.0",
+    "react-devtools": "^4.10.1",
     "react-dom": "~16.11.0",
     "react-i18next": "^11.8.5",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",

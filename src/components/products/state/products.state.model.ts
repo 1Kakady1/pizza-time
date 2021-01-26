@@ -1,16 +1,18 @@
 export interface IProductsExcept {
     title: string;
     preview: string;
+    desc: string;
     id: string;
-    price: {
-        [key:string]: number
-    } | number;
+    price: price;
     cat: string[];
     isTop: boolean;
     filters: {
         size: string[]
     };
 }
+
+export type price = {[key:string]: number} | number
+
 export interface IProducts extends IProductsExcept {
     status: string;
     desc: string;

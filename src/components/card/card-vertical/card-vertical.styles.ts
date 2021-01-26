@@ -1,12 +1,12 @@
 import {StyleSheet } from 'react-native';
-import { black, gray } from '../../../consts/colors.const';
+import { black, gray, write } from '../../../consts/colors.const';
 
-export const stylesCardVerical = StyleSheet.create({
+export const stylesCardVertical = StyleSheet.create({
     container:{
         flexDirection: "column",
         width: "100%",
         height: "100%",
-        backgroundColor: gray[100],
+        backgroundColor: write,
         borderRadius: 6
     },
     preview:{

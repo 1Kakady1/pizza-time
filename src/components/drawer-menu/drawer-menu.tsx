@@ -105,7 +105,25 @@ export default function DrawerContent({ email,name,isAuth,isLoad,preview,onSignO
                                   })
                             }}
                         />
-                         <DrawerItem
+                        <DrawerItem
+                            icon={({ size}) => (
+                                <Icon 
+                                name="cart" 
+                                color={drawer.text}
+                                size={size}
+                                />
+                            )}
+                            label={()=> <Text style={styles.menuItem}>{t("menu.cart")}</Text>}
+                            onPress={() => {
+                                drawerProps.navigation.navigate(SCREENS_STACK.drawer, {
+                                    screen: SCREENS_STACK.drawlerChild,
+                                    params:{
+                                        screen: SCREENS.cart,
+                                    }
+                                })
+                            }}
+                        />
+                        <DrawerItem
                             icon={({ size}) => (
                                 <Icon 
                                 name="information-outline" 
@@ -116,7 +134,10 @@ export default function DrawerContent({ email,name,isAuth,isLoad,preview,onSignO
                             label={()=> <Text style={styles.menuItem}>{t("menu.about")}</Text>}
                             onPress={() => {
                                 drawerProps.navigation.navigate(SCREENS_STACK.drawer, {
-                                    screen: SCREENS.about,
+                                    screen: SCREENS_STACK.drawlerChild,
+                                    params:{
+                                        screen: SCREENS.about,
+                                    }
                                 })
                             }}
                         />
