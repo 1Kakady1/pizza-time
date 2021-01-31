@@ -3,7 +3,21 @@ import { } from 'react-native';
 
 export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;
-
+export const datetimeSplit = (date?: Date) =>{
+    const a = date ? new Date(date) : new Date();
+    return {
+        day: a.getDate(),
+        min: a.getMinutes(), 
+        s: a.getSeconds(), 
+        ms: a.getMilliseconds(),
+        month: a.getMonth(),
+        year: a.getFullYear(),
+        UTCHours: a.getUTCHours(),
+        hours: a.getHours(),
+        time: a.getTime(),
+        timezoneOffset: a.getTimezoneOffset(),
+    }
+}
 export const dataHeight = (h:number, key:string = "key")=>{
     const windowHeight = Dimensions.get('window').height;
     let arr = [],i=0;

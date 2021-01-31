@@ -22,5 +22,14 @@
     "about": "About",
     "reg":"Registration",
     "not.acc.title":"No account?",
-    "not.acc.desc":"Start it up quickly!"
+    "not.acc.desc":"Start it up quickly!",
+    "label.name": "Ваше имя",
+    "label.email": "Ваш email",
+    "label.address": "Адрес доставки",
+    "label.comments": "Есть ли пожелания ?",
+    "label.date": "Дата и время доставки",
+    "order.error": "Проверьте введенные данные",
+    "order.success": "Ваша заявка оформлена!",
+    "btn.send": "Send",
+    "order.header.text": "Оформление заказа"
 }

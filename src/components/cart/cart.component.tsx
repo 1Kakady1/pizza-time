@@ -12,7 +12,7 @@ const renderSeparatorDefault = () => <View style={stylesFlatListSeparator.separa
 export const Cart = ({cart,count, onAdd, onSub ,goProducts, goOrder ,onClear, onChangeComments ,totalPrice, onRemove}: ICartProps) => {
 
   const styles =  stylesCart;
-
+    //TODO: add translate
   return (
     <View style={{position: "relative", flex: 1}}>
         <ImageBackground  source={require("./resources/header-cart.jpg")} style={styles.imageHeader}>

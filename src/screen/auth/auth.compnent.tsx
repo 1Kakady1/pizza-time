@@ -171,11 +171,11 @@ export const Auth = () => {
         }
        
     }
-
+    //TODO: add formik (example to order)
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={styles.container} >
-                
+
                     <StatusBar backgroundColor={statusBar.bg[0]} style="light" />
                     <ImageBackground source={require("../../../assets/img/bg.jpg")} style={styles.BgImage} />
                     

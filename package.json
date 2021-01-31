@@ -9,6 +9,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-native-community/datetimepicker": "2.4.0",
     "@react-native-community/masked-view": "0.1.10",
     "@react-native-masked-view/masked-view": "^0.2.0",
     "@react-navigation/drawer": "^5.9.0",
@@ -16,6 +17,7 @@
     "@react-navigation/stack": "^5.9.0",
     "@reduxjs/toolkit": "^1.4.0",
     "@types/i18n-js": "^3.0.3",
+    "@types/react-native-snap-carousel": "^3.8.2",
     "@types/react-redux": "^7.1.9",
     "@types/redux-logger": "^3.0.8",
     "add": "^2.0.6",
@@ -24,6 +26,7 @@
     "expo-localization": "~8.2.1",
     "expo-status-bar": "^1.0.2",
     "firebase": "^8.2.1",
+    "formik": "^2.2.6",
     "i18next": "^19.8.4",
     "lodash": "^4.17.20",
     "react": "~16.11.0",
@@ -56,7 +59,8 @@
     "redux-observable": "^1.2.0",
     "redux-thunk": "^2.3.0",
     "rxjs": "^6.6.3",
-    "yarn": "^1.22.10"
+    "yarn": "^1.22.10",
+    "yup": "^0.32.8"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",

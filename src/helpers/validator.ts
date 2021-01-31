@@ -1,3 +1,4 @@
+//TODO: Use Formik and yup 
 export interface IError{
 	valid: boolean,
 	key:string,

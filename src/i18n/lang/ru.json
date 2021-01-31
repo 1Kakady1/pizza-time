@@ -3,6 +3,8 @@
     "len":"Длина должна быть больше 3",
     "email":"Некорректный email",
     "req" :"Необходимо заполнить это поле",
+    "error.req" :"Необходимо заполнить это поле",
+    "error.email":"Некорректный email",
     "msg.modal.error":"Проверьте введенные данные",
     "email.label": "Email",
     "password.label": "Пароль",
@@ -22,5 +24,14 @@
     "about": "О нас",
     "reg":"Регистрация",
     "not.acc.title":"Нет аккаунта?",
-    "not.acc.desc":"Быстрей заводи!"
+    "not.acc.desc":"Быстрей заводи!",
+    "label.name": "Ваше имя",
+    "label.email": "Ваш email",
+    "label.address": "Адрес доставки",
+    "label.comments": "Есть ли пожелания ?",
+    "label.date": "Дата и время доставки",
+    "order.error": "Проверьте введенные данные",
+    "order.success": "Ваша заявка оформлена!",
+    "btn.send": "Отправить",
+    "order.header.text": "Оформление заказа"
 }

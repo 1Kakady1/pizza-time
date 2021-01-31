@@ -1,10 +1,12 @@
 import { from, Observable, of } from "rxjs";
 import { catchError, switchMap } from "rxjs/operators";
+import { ICartItem } from "../components/cart/state/cart.state.model";
+import { IOrderForm } from "../components/order/order.model";
 import { IProducts } from "../components/products/state/products.state.model";
 import {fb} from "../firebase/firebase"
 import { IUser, IUserActionProps } from "../store/user/user.model"
 
-interface IResponse<TMeta, TError, TData> {
+export interface IResponse<TMeta, TError, TData> {
   meta?: TMeta;
   error?: TError;
   data?: TData;
@@ -84,5 +86,24 @@ export const getProducts = (limit:number=10, offset:number=0):  Observable<IResp
 
     }),
     catchError((e)=> {console.log("error===>",e); return of({error: e})})
+  )
+}
+
+export const addOrder = (orderInfo: IOrderForm,products: ICartItem[], key: string):  Observable<IResponse<{}, string,  string >>=>{
+  return from(fb.dbh.collection("orders").add({
+      key,
+      name: orderInfo.name,
+      email: orderInfo.email,
+      date: orderInfo.date,
+      comments: orderInfo.comments,
+      address: orderInfo.address,
+      products
+  })
+  )
+  .pipe(
+    switchMap((res: any)=> {
+      return of({data: res})
+    }),
+    catchError((e)=> {return of({error: e})})
   )
 }
