@@ -1,11 +1,10 @@
 import React from 'react';
-import { View,Text} from 'react-native';
-import { Fab } from '../../components/fab/fab.component';
-import { ModalWindow } from '../../components/modal/modal.component';
+import { View} from 'react-native';
 import { stylesHome } from './home.styles';
 import { statusBar } from '../../consts/colors.const';
 import { StatusBar } from 'expo-status-bar';
 import { ProductsContainer } from '../../components/products/products.container';
+import { SearchContainer } from '../../components/search/components/search.container';
 
 const Home = () => {
 
@@ -13,17 +12,9 @@ const Home = () => {
 
     return (
         <View style={styles.container}>
-
             <StatusBar backgroundColor={statusBar.bg[60]} style="light" />
-
             <ProductsContainer />
-
-            {/* <ModalWindow btn={Fab} btnProps={{onPress:()=> true,label:"", icon:"cart"}} >
-                    <View>
-                        <Text>У Вас нет прав доступа к данной опции. Свяжитесь с администратором для получения информации.</Text>
-                    </View>
-            </ModalWindow> */}
-            
+            <SearchContainer />
         </View>
     );
 }

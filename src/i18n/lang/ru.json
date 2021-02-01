@@ -33,5 +33,6 @@
     "order.error": "Проверьте введенные данные",
     "order.success": "Ваша заявка оформлена!",
     "btn.send": "Отправить",
-    "order.header.text": "Оформление заказа"
+    "order.header.text": "Оформление заказа",
+    "search.price": "Цена за '{{size}}':"
 }

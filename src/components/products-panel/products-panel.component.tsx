@@ -5,7 +5,7 @@ import { stylesPrductsPanel } from './products-panel.styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
-export const ProductsPanel = ({drawerOpen}:IProductsPanelProps) => {
+export const ProductsPanel = ({drawerOpen, onOpenSearch}:IProductsPanelProps) => {
 
   const styles= stylesPrductsPanel;
 
@@ -17,7 +17,7 @@ export const ProductsPanel = ({drawerOpen}:IProductsPanelProps) => {
                 <Icon name={"menu"} color={"#fff"} size={30}/>
              </TouchableOpacity>
               <Text style={styles.text}>MENU</Text>
-             <TouchableOpacity style={styles.btn}  onPress={()=>{console.log("open")}} >
+             <TouchableOpacity style={styles.btn}  onPress={onOpenSearch} >
                 <Icon name={"magnify"} color={"#fff"} size={30}/>
              </TouchableOpacity>
            </View>

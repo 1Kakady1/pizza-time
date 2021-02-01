@@ -107,3 +107,26 @@ export const addOrder = (orderInfo: IOrderForm,products: ICartItem[], key: strin
     catchError((e)=> {return of({error: e})})
   )
 }
+
+export const getSearch = (queryText: string):  Observable<IResponse<{}, string,  IProducts[]>>=>{
+  //TODO: firebase not search. This search fake.
+  return from(fb.dbh.collection("products")
+    .orderBy("title")
+    .startAt(queryText)
+    .limit(3)
+    .get()
+  )
+  .pipe(
+    switchMap((res: any)=> {
+
+      let data:IProducts[] = [];
+
+      res.forEach(function(doc:any) {
+        data.push({...doc.data(), id: doc.id})
+      })
+      
+      return of({data: data})
+    }),
+    catchError((e)=> {return of({error: e})})
+  )
+}

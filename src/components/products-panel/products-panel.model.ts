@@ -1,3 +1,4 @@
 export interface IProductsPanelProps{
-    drawerOpen: () => void
+    drawerOpen: () => void;
+    onOpenSearch: () => void;
 }

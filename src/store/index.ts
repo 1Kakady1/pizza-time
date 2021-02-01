@@ -32,7 +32,7 @@ export const store = configureStore({
 });
 
 if(process.env.NODE_ENV === `development`){
-    storeLog(store, [sliceKeys[4]])
+    storeLog(store, [sliceKeys[7]])
 }
 
 epicMiddleware.run(rootEpic);
