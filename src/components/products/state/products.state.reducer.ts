@@ -10,6 +10,13 @@ const setProducts = (state:IProductsData, {payload}: { payload:IProducts[]})=>{
   }
 }
 
+const setCurrentCat = (state:IProductsData, {payload}: { payload: string})=>{
+  return {
+    ...state,
+    currentCat: payload
+  }
+}
+
 const productsRequest= (state:IProductsData)=>{
   state.isLoad = true;
   state.error="";
@@ -38,6 +45,7 @@ export const productsSlice = createSlice({
     productsRequest,
     productsRequestSuccess,
     productsRequestFailed,
+    setCurrentCat,
   },
 })
 

@@ -34,5 +34,6 @@
     "order.success": "Your application is completed!",
     "btn.send": "Send",
     "order.header.text": "Making an order",
-    "search.price": "Price pay for '{{size}}':"
+    "search.price": "Price pay for '{{size}}':",
+    "panel.menu": "MENU"
 }

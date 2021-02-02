@@ -34,5 +34,6 @@
     "order.success": "Ваша заявка оформлена!",
     "btn.send": "Отправить",
     "order.header.text": "Оформление заказа",
-    "search.price": "Цена за '{{size}}':"
+    "search.price": "Цена за '{{size}}':",
+    "panel.menu": "МЕНЮ"
 }

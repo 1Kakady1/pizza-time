@@ -27,10 +27,10 @@ export interface IProductsData{
     error: string;
     currentPost?: IProducts;
     filters: IProductsFilters;
+    currentCat: string;
 }
 
 interface IProductsFilters{
     limit: number;
     offset: number;
 }
-

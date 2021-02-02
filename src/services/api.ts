@@ -1,6 +1,7 @@
 import { from, Observable, of } from "rxjs";
 import { catchError, switchMap } from "rxjs/operators";
 import { ICartItem } from "../components/cart/state/cart.state.model";
+import { ICatList } from "../components/cat/state/cat.state.model";
 import { IOrderForm } from "../components/order/order.model";
 import { IProducts } from "../components/products/state/products.state.model";
 import {fb} from "../firebase/firebase"
@@ -66,10 +67,28 @@ export const getProductsById = (id:string):  Observable<IResponse<{}, string,  I
   )
 }
 
+export const getCatList = ():  Observable<IResponse<{}, string,  ICatList[] >>=>{
+  
+  return from(fb.dbh.collection("cat").get())
+  .pipe(
+    switchMap((res: any)=> {
 
+      let data:ICatList[] = [];
 
-export const getProducts = (limit:number=10, offset:number=0):  Observable<IResponse<{}, string,  IProducts[] >>=>{
+        res.forEach(function(doc:any) {
+          data.push({...doc.data(), id: doc.id})
+        })
+      return of({data: data})
+
+    }),
+    catchError((e)=> {console.log("error===>",e); return of({error: e})})
+  )
+}
+
+export const getProducts = (currentCat:string,limit:number=10, offset:number=0):  Observable<IResponse<{}, string,  IProducts[] >>=>{
+  
   return from(fb.dbh.collection("products")
+    .where("cat",'array-contains',currentCat)
     //.orderBy("status")
     .limit(limit)
     .get()

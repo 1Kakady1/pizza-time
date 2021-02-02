@@ -5,6 +5,7 @@ import rootEpic from './epics';
 import logger from 'redux-logger'
 import { throttle } from 'lodash';
 import { storeLog } from '../helpers/store';
+import { toCatAction } from '../components/cat/state/cat.state.reducer';
 
 const middlewareArr:any = [];
 
@@ -32,10 +33,11 @@ export const store = configureStore({
 });
 
 if(process.env.NODE_ENV === `development`){
-    storeLog(store, [sliceKeys[7]])
+    storeLog(store, [sliceKeys[8]])
 }
 
 epicMiddleware.run(rootEpic);
 
 // можно получить инфу до создания
+store.dispatch(toCatAction.catRequest())
 //store.dispatch(toUserAction.loginActionRequest());

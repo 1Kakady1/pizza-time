@@ -17,6 +17,7 @@ export const stylesPrductsPanel = StyleSheet.create({
         backgroundColor: "#000000a0",
         justifyContent: "space-between",
         alignItems: "center",
+        position: "relative",
     },
     text:{
         fontSize: 20,
@@ -25,5 +26,15 @@ export const stylesPrductsPanel = StyleSheet.create({
     },
     btn:{
         padding: 10
+    },
+    catListWrap:{
+        position: "absolute",
+        bottom: 10,
+        left: 0,
+        width: "100%",
+        height: 14,
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 12
     }
 })

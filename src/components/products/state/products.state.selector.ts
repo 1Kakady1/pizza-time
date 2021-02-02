@@ -27,4 +27,9 @@ const filters = createSelector(
     ({ filters }) => filters
 );
 
-export const toProducts = {productsList, filters, isLoad, getProduct,productsSelector};
+const currentCat = createSelector(
+    productsSelector,
+    ({ currentCat }) => currentCat
+);
+
+export const toProducts = {productsList, filters, isLoad, getProduct,productsSelector, currentCat};

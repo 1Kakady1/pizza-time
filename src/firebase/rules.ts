@@ -14,6 +14,10 @@ service cloud.firestore {
     	allow write: if false;
       allow read: if true;
     }
+    match /cat/{cat} {
+    	allow write: if false;
+      allow read: if true;
+    }
   }
 }
 */

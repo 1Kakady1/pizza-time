@@ -11,6 +11,9 @@ export const stylesSearchItem = StyleSheet.create({
         justifyContent: "space-between",
         backgroundColor: write
     },
+    wrapper:{
+        marginBottom: 12
+    },
     preview: {
         borderRadius: 10,
         width: 100,

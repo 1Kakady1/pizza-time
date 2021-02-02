@@ -5,9 +5,9 @@ import { productsSlice } from '../components/products/state/products.state.reduc
 import { cartSlice } from '../components/cart/state/cart.state.reducer'
 import { postSlice } from '../components/post-screen/state/post-screen.state.reducer'
 import { cartPanelSlice } from '../components/cart-panel/state/cart-panel.state.reducer'
-import { searchSlice } from '../components/search/state/search.reducer'
 import { productsPanelSlice } from '../components/products-panel/state/products-panel.reducer'
 import { SearchModule } from '../components/search/search.module'
+import { catSlice } from '../components/cat/state/cat.state.reducer'
 
 export const slices = {
   [userSlice.name]: userSlice.reducer,
@@ -18,17 +18,19 @@ export const slices = {
   [postSlice.name]: postSlice.reducer,
   [cartPanelSlice.name]: cartPanelSlice.reducer,
   [productsPanelSlice.name]: productsPanelSlice.reducer,
-  ...SearchModule.reducer
+  [catSlice.name]: catSlice.reducer,
+  ...SearchModule.reducer,
 }
 
 export const sliceKeys=[
-  userSlice.name,
-  headerSlice.name,
-  settingSlice.name,
-  productsSlice.name,
-  cartSlice.name,
-  postSlice.name,
-  cartPanelSlice.name,
-  SearchModule.name,
-  productsPanelSlice.name,
+  userSlice.name, //0
+  headerSlice.name, //1
+  settingSlice.name, //2
+  productsSlice.name, //3
+  cartSlice.name, //4
+  postSlice.name, //5
+  cartPanelSlice.name, //6
+  SearchModule.name, //7
+  productsPanelSlice.name, //8
+  catSlice.name //9
 ]

@@ -3,36 +3,35 @@ import { ActionsObservable, ofType } from 'redux-observable';
 import { switchMap, map, withLatestFrom } from 'rxjs/operators';
 import { Observable} from 'rxjs';
 
-import { getProducts } from '../../../services/api';
-import { toProductsAction } from './products.state.reducer';
-import { toProducts } from './products.state.selector';
+import { getCatList } from '../../../services/api';
+import { toCatAction } from './cat.state.reducer';
 
-export const productsSetEffect = (
+export const catSetEffect = (
     action$: ActionsObservable<Action>,
     state: Observable<Record<string, unknown>>
 ): Observable<Action> =>
     action$.pipe(
         ofType(
-            toProductsAction.productsRequest.type,
+            toCatAction.catRequest.type,
         ),
         withLatestFrom(state),
         switchMap(([, state]) => {
-            return getProducts(toProducts.currentCat(state))
+            return getCatList()
             .pipe(
                 map((response) => {
                     if (response.error) {
-                        return toProductsAction.productsRequestFailed(
+                        return toCatAction.catRequestFailed(
                             response.error.toString()
                         );
                     }
 
                     if (response.data){
-                        return toProductsAction.productsRequestSuccess(
+                        return toCatAction.catRequestSuccess(
                             response?.data
                         );
                     }
 
-                    return toProductsAction.productsRequestFailed(
+                    return toCatAction.catRequestFailed(
                         'Data is empty'
                     );
                 })

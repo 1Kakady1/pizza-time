@@ -9,5 +9,6 @@ export const productsInit:IProductsData   = {
    filters:{
       limit: 0,
       offset: 0
-   }
+   },
+   currentCat: "all"
 }

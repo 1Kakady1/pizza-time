@@ -13,7 +13,7 @@ export const ProductsContainer = () => {
     const data =  useSelector(toProducts.productsList)
     const isLoad = useSelector(toProducts.isLoad)
     const navigaion = useNavigation();
-
+    const currentCat = useSelector(toProducts.currentCat)
     const nav = (id:string)=> navigaion.navigate(SCREENS_STACK.modal, {
       screen: SCREENS.postItem,
       params: { id },
@@ -23,6 +23,10 @@ export const ProductsContainer = () => {
     useEffect(()=>{
       onRefresh()
     },[])
+
+    useEffect(()=>{
+      dispatch(toProductsAction.productsRequest());
+    },[currentCat])
 
   return !isLoad ?  <Products 
             isLoad={isLoad} 

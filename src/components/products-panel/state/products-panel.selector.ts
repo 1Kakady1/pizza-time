@@ -12,6 +12,9 @@ const isSearch = createSelector(
     ({ isSearch }) => isSearch
 );
 
+const preview = createSelector(
+    userSelector,
+    ({ preview }) => preview
+);
 
-
-export const toSettingSelector = {isSearch};
+export const toProductPanelSelector = {isSearch, preview};

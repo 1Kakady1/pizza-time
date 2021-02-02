@@ -23,7 +23,7 @@ export const SearchItem = ({title, price, preview, id, index, size, onClose}: IS
     })
 
     return (
-        <TouchableOpacity onPress={()=> {  onClose(); nav(); }}>
+        <TouchableOpacity style={styles.wrapper} onPress={()=> {  onClose(); nav(); }}>
             <Animatable.View animation={"fadeIn"} delay={200 * index} style={styles.container}>
                 <View style={styles.colLeft}>
                     <View style={{...styles.preview}}>
