@@ -1,5 +1,6 @@
 import {StyleSheet } from 'react-native';
 import {black, gray, primary, text, write} from '../../../consts/colors.const';
+import { sizeOffset } from '../../../consts/size';
 
 export const stylesCardHorizontal = StyleSheet.create({
     item: {
@@ -54,12 +55,12 @@ export const stylesCardHorizontal = StyleSheet.create({
     },
     text:{
         color: text.title,
-        fontSize: 24,
+        fontSize: 24 * sizeOffset(),
         
     },
     desc:{
         color: black[60],
-        fontSize: 14
+        fontSize: 14 * sizeOffset()
     },
     preview:{
         backgroundColor: gray[100],
@@ -76,6 +77,7 @@ export const stylesCardHorizontal = StyleSheet.create({
         marginLeft: 6,
         marginRight: 6,
         color: text.title,
+        fontSize: 14 * sizeOffset(),
     },
     priceWrap:{
         width: "100%",
@@ -98,7 +100,7 @@ export const stylesCardHorizontal = StyleSheet.create({
     },
     badgbe:{
         height: 48,
-        width: 48
+        width: 48 
     },
     badgeImg:{
         width: "100%",

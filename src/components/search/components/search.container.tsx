@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Search } from './search.component';
 import { toSearchAction } from '../state/search.reducer';
 import { toSearchSelector } from '../state/search.selector';
+import { sizeOffset } from '../../../consts/size';
 
 export const SearchContainer = () => {
     
@@ -28,7 +29,7 @@ export const SearchContainer = () => {
 
 
     return <Search 
-                height={560} 
+                height={560 * sizeOffset()} 
                 query={query} 
                 result={result} 
                 onChangeSearch={onChangeSearch}  

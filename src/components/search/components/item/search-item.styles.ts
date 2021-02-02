@@ -1,6 +1,17 @@
-import {StyleSheet } from 'react-native';
+import {Dimensions, StyleSheet } from 'react-native';
 import { primary, text, write } from '../../../../consts/colors.const';
 
+const widthScreen = Dimensions.get('window').width;
+
+const sizeOffset = () =>{
+
+    if(widthScreen  < 340){
+        return 0.8
+    }
+
+    return 1; 
+    
+}
 
 export const stylesSearchItem = StyleSheet.create({
     container: {
@@ -30,6 +41,7 @@ export const stylesSearchItem = StyleSheet.create({
     colRight:{
         width: "100%",
         marginLeft: 16,
+        justifyContent: "center"
     },
     info:{
         flexDirection: "row",
@@ -45,13 +57,14 @@ export const stylesSearchItem = StyleSheet.create({
         marginLeft: 6,
         marginRight: 6,
         color: text.title,
+        fontSize: 14 * sizeOffset()
     },
     title:{
         color: text.title,
-        fontSize: 20,
+        fontSize: 20 * sizeOffset(),
     },
     price:{
-        fontSize: 18,
+        fontSize: 18 * sizeOffset(),
         color: primary[1]
     },
     

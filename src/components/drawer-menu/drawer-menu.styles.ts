@@ -1,5 +1,7 @@
+import { size } from 'lodash';
 import {  Dimensions, StyleSheet } from 'react-native';
 import { drawer } from '../../consts/colors.const';
+import { sizeOffset } from '../../consts/size';
 const width =  Dimensions.get('window').width
 export const stylesDrawer = StyleSheet.create({
     drawerContent: {
@@ -20,7 +22,8 @@ export const stylesDrawer = StyleSheet.create({
       color: drawer.text
     },
     menuItem:{
-      color: drawer.text
+      color: drawer.text,
+      fontSize: 14 * sizeOffset()
     },
     caption: {
       fontSize: width * 0.024,

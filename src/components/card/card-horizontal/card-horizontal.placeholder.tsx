@@ -5,6 +5,7 @@ import { stylesCardHorizontal } from './card-horizontal.styles';
 import { dataCount, getWidth } from '../../../helpers/functions';
 import { gray } from '../../../consts/colors.const';
 import { ICardHorizontalPlaceholder } from './card-horizontal.model';
+import { sizeOffset } from '../../../consts/size';
 
 export  const  RenderItem = ()=>{
 
@@ -16,13 +17,13 @@ export  const  RenderItem = ()=>{
                 <View style={{...styles.preview}}></View>
                 <View style={{flexDirection: "column", marginTop: 10}}>
                     <View style={{marginLeft: 10, marginBottom: 6, marginTop: 6}}>
-                        <SkeletonPlaceholder.Item width={180}  height={20} borderRadius={4} />
+                        <SkeletonPlaceholder.Item width={180 * sizeOffset()}  height={20} borderRadius={4} />
                     </View>
                     <View style={{marginLeft: 10, marginBottom: 6, marginTop: 6}}>
-                        <SkeletonPlaceholder.Item width={180} height={20} borderRadius={4} />
+                        <SkeletonPlaceholder.Item width={180 * sizeOffset()} height={20} borderRadius={4} />
                     </View>
                     <View style={{marginLeft: 10, marginBottom: 6, marginTop: 6}}>
-                        <SkeletonPlaceholder.Item width={180}  height={20} borderRadius={4} />
+                        <SkeletonPlaceholder.Item width={180 *  sizeOffset()}  height={20} borderRadius={4} />
                     </View>
                 </View>
                 <View style={{marginLeft: 14, marginTop: 42}}>

@@ -1,5 +1,6 @@
 import {StyleSheet } from 'react-native';
 import {black, gray, primary, text, write} from '../../../consts/colors.const';
+import { sizeOffset } from '../../../consts/size';
 
 export const stylesCardCart = StyleSheet.create({
     itemRow:{
@@ -46,7 +47,7 @@ export const stylesCardCart = StyleSheet.create({
     },
     text:{
         color: text.title,
-        fontSize: 24,
+        fontSize: 24 * sizeOffset(),
         
     },
     desc:{
@@ -68,10 +69,12 @@ export const stylesCardCart = StyleSheet.create({
         marginLeft: 6,
         marginRight: 6,
         color: text.title,
+        fontSize: 14 * sizeOffset()
     },
     price:{
         marginLeft: 0,
-        color: primary[1]
+        color: primary[1],
+        fontSize: 14 * sizeOffset()
     },
     icon:{
         color: text.title,
@@ -79,20 +82,20 @@ export const stylesCardCart = StyleSheet.create({
     counter:{
         marginBottom: 3,
         marginTop: 3,
-        width: 26,
-        height: 26,
+        width: 26 * sizeOffset(),
+        height: 26 * sizeOffset(),
         justifyContent: "center",
         alignItems: "center"
     },
     counterText:{
         color: black[100],
-        fontSize: 16,
+        fontSize: 16 * sizeOffset(),
         fontWeight: "bold"
     },
     sizeBtn:{
         position: "relative",
-        width: 35,
-        height: 35,
+        width: 35 * sizeOffset(),
+        height: 35 * sizeOffset(),
         borderRadius: 35,
         backgroundColor: "#333939",
         padding: 0,
@@ -105,7 +108,7 @@ export const stylesCardCart = StyleSheet.create({
     sizeLabel:{
         color: "#fff",
         textAlign: "center",
-        fontSize: 10,
+        fontSize: 10 * sizeOffset(),
         textTransform: "uppercase"
     },
     input:{

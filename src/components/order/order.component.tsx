@@ -9,6 +9,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { IOrderForm, IOrderProps } from './order.model';
 import { datetimeSplit, dd } from '../../helpers/functions';
 import * as Animatable from 'react-native-animatable';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export const Order = ({cart, sendOrder, goHome, onClear}: IOrderProps) => {
 
@@ -60,131 +61,132 @@ export const Order = ({cart, sendOrder, goHome, onClear}: IOrderProps) => {
                 }}
                 validationSchema={orderSchema}
             >
-                {({ handleChange, handleSubmit, setFieldValue, handleReset ,values, errors, touched }) => (
-                    <View style={styles.form}>
-                        <View style={styles.formControl}>
-                            <TextInput
-                                style={styles.input}
-                                label={t("label.name")+"*"}
-                                onChangeText={handleChange('name')}
-                                value={values.name}
-                                theme={colorsInput}
-                                error={errors.name && touched.name ? true : false}
-                            />
-                            <Animatable.Text 
-                                animation={errors.name && touched.name ? zoomIn :  zoomOut} 
-                                style={styles.inputError}
-                            >
-                                {t(errors.name || "error.req")}
-                            </Animatable.Text>
-                        </View>
-                        <View style={styles.formControl}>
-                            <TextInput
-                                style={styles.input}
-                                label={t("label.email")+"*"}
-                                onChangeText={handleChange('email')}
-                                value={values.email}
-                                theme={colorsInput}
-                                error={errors.email && touched.email ? true : false}
-                            />
-                            <Animatable.Text 
-                                animation={errors.email && touched.email ? zoomIn :  zoomOut} 
-                                style={styles.inputError}
-                            >
-                                {t(errors.email || "error.email")}
-                            </Animatable.Text>
-                        </View>
-                        <View style={styles.formControl}>
-                            
-                            <Button
-                                style={styles.datetime} 
-                                onPress={()=> {setShowDate(true)}} 
-                            >
-                                <Text style={styles.datetimeText} > {`Заказ на: ${getDate(values.date)}`} </Text>
-                            </Button >
-                            <IconButton
-                                style={styles.datetimeIcon}
-                                icon={"calendar-month"}
-                                color={"#333939"}
-                                size={30}
-                                onPress={()=> {setShowDate(true)}}
-                            />
-                            
-                            {
-                                showDate &&  <DateTimePicker
-                                    testID="date"
-                                    value={values.date}
-                                    mode={"date"}
-                                    is24Hour={true}
-                                    display="default"
-                                    onChange={(event, selectedDate) =>{
-                                        setShowDate(false);
-                                        if(selectedDate && event){
-                                            setFieldValue("date",Date.parse(selectedDate.toString()));
-                                            setShowTime(true)
-                                        }                                     
-                                    }}
-                                    maximumDate={offsetDate}
-                                    minimumDate={currentDateTime}
+                {({ handleChange, handleSubmit, setFieldValue ,values, errors, touched }) => (
+                    <ScrollView>
+                        <View style={styles.form}>
+                            <View style={styles.formControl}>
+                                <TextInput
+                                    style={styles.input}
+                                    label={t("label.name")+"*"}
+                                    onChangeText={handleChange('name')}
+                                    value={values.name}
+                                    theme={colorsInput}
+                                    error={errors.name && touched.name ? true : false}
                                 />
-                            }
+                                <Animatable.Text 
+                                    animation={errors.name && touched.name ? zoomIn :  zoomOut} 
+                                    style={styles.inputError}
+                                >
+                                    {t(errors.name || "error.req")}
+                                </Animatable.Text>
+                            </View>
+                            <View style={styles.formControl}>
+                                <TextInput
+                                    style={styles.input}
+                                    label={t("label.email")+"*"}
+                                    onChangeText={handleChange('email')}
+                                    value={values.email}
+                                    theme={colorsInput}
+                                    error={errors.email && touched.email ? true : false}
+                                />
+                                <Animatable.Text 
+                                    animation={errors.email && touched.email ? zoomIn :  zoomOut} 
+                                    style={styles.inputError}
+                                >
+                                    {t(errors.email || "error.email")}
+                                </Animatable.Text>
+                            </View>
+                            <View style={styles.formControl}>
+                                
+                                <Button
+                                    style={styles.datetime} 
+                                    onPress={()=> {setShowDate(true)}} 
+                                >
+                                    <Text style={styles.datetimeText} > {t("cart.order")} {getDate(values.date)} </Text>
+                                </Button >
+                                <IconButton
+                                    style={styles.datetimeIcon}
+                                    icon={"calendar-month"}
+                                    color={"#333939"}
+                                    size={30}
+                                    onPress={()=> {setShowDate(true)}}
+                                />
+                                
+                                {
+                                    showDate &&  <DateTimePicker
+                                        testID="date"
+                                        value={values.date}
+                                        mode={"date"}
+                                        is24Hour={true}
+                                        display="default"
+                                        onChange={(event, selectedDate) =>{
+                                            setShowDate(false);
+                                            if(selectedDate && event){
+                                                setFieldValue("date",Date.parse(selectedDate.toString()));
+                                                setShowTime(true)
+                                            }                                     
+                                        }}
+                                        maximumDate={offsetDate}
+                                        minimumDate={currentDateTime}
+                                    />
+                                }
 
-                            {
-                                showTime &&  <DateTimePicker
-                                    testID="time"
-                                    value={values.date}
-                                    mode={"time"}
-                                    is24Hour={true}
-                                    display="default"
-                                    onChange={(event, selectedDate) =>{
-                                        setShowTime(false)
-                                        if(selectedDate && event){
-                                            setFieldValue("date",Date.parse(selectedDate.toString())); 
-                                        }                                     
-                                    }}
-                                    maximumDate={offsetDate}
-                                    minimumDate={currentDateTime}
-                                 />
-                            } 
+                                {
+                                    showTime &&  <DateTimePicker
+                                        testID="time"
+                                        value={values.date}
+                                        mode={"time"}
+                                        is24Hour={true}
+                                        display="default"
+                                        onChange={(event, selectedDate) =>{
+                                            setShowTime(false)
+                                            if(selectedDate && event){
+                                                setFieldValue("date",Date.parse(selectedDate.toString())); 
+                                            }                                     
+                                        }}
+                                        maximumDate={offsetDate}
+                                        minimumDate={currentDateTime}
+                                    />
+                                } 
 
-                        </View>
-                        <View style={styles.formControl}>
-                            <TextInput
-                                style={styles.input}
-                                label={t("label.address")+"*"}
-                                onChangeText={handleChange('address')}
-                                value={values.address}
-                                theme={colorsInput}
-                                error={errors.address && touched.address ? true : false}
-                            />
-                            <Animatable.Text 
-                                animation={errors.address && touched.address ? zoomIn :  zoomOut} 
-                                style={styles.inputError}
+                            </View>
+                            <View style={styles.formControl}>
+                                <TextInput
+                                    style={styles.input}
+                                    label={t("label.address")+"*"}
+                                    onChangeText={handleChange('address')}
+                                    value={values.address}
+                                    theme={colorsInput}
+                                    error={errors.address && touched.address ? true : false}
+                                />
+                                <Animatable.Text 
+                                    animation={errors.address && touched.address ? zoomIn :  zoomOut} 
+                                    style={styles.inputError}
+                                >
+                                    {t(errors.address || "error.req")}
+                                </Animatable.Text>
+                            </View>
+
+                            <View style={styles.formControl}>
+                                <TextInput
+                                    style={styles.input}
+                                    label={t("label.comments")}
+                                    onChangeText={handleChange('comments')}
+                                    theme={colorsInput}
+                                    value={values.comments}
+                                />
+                            </View>
+                            <Button
+                                loading={isLoad} 
+                                icon="send-circle"
+                                color={"#333939"}
+                                style={styles.btn}
+                                onPress={handleSubmit} 
                             >
-                                {t(errors.address || "error.req")}
-                            </Animatable.Text>
+                                <Text style={styles.btnText}>{t("btn.send")}</Text>
+                            </Button >
                         </View>
-
-                        <View style={styles.formControl}>
-                            <TextInput
-                                style={styles.input}
-                                label={t("label.comments")}
-                                onChangeText={handleChange('comments')}
-                                theme={colorsInput}
-                                value={values.comments}
-                            />
-                        </View>
-                        <Button
-                            loading={isLoad} 
-                            icon="send-circle"
-                            color={"#333939"}
-                            style={styles.btn}
-                            onPress={handleSubmit} 
-                        >
-                            <Text style={styles.btnText}>{t("btn.send")}</Text>
-                        </Button >
-
-                    </View>
+                    </ScrollView>
                 )}
             </Formik>
             <Snackbar
@@ -196,7 +198,7 @@ export const Order = ({cart, sendOrder, goHome, onClear}: IOrderProps) => {
                     goHome()
                 },
                 }}>
-                Ваш заказ принят. С вами свяжутся для уточнения!
+                {t("order.send")}
             </Snackbar>
         </ImageBackground>
     );

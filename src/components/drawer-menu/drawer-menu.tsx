@@ -123,7 +123,7 @@ export default function DrawerContent({ email,name,isAuth,isLoad,preview,onSignO
                                 })
                             }}
                         />
-                        <DrawerItem
+                        {/*<DrawerItem
                             icon={({ size}) => (
                                 <Icon 
                                 name="information-outline" 
@@ -140,7 +140,7 @@ export default function DrawerContent({ email,name,isAuth,isLoad,preview,onSignO
                                     }
                                 })
                             }}
-                        />
+                        /> */}
                     </Drawer.Section>
 
                 </View>

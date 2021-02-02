@@ -1,6 +1,6 @@
 import {StyleSheet } from 'react-native';
 import { primary, write} from '../../consts/colors.const';
-import { heightScreen } from '../../consts/size';
+import { heightScreen, sizeOffset } from '../../consts/size';
 
 export const stylesFlatListSeparator = StyleSheet.create({
     separator:{
@@ -44,8 +44,8 @@ export const stylesCart = StyleSheet.create({
         fontWeight: "bold",
         position: 'absolute',
         top: "40%",
-        right: 16,
-        fontSize: 18,
+        right: 16 * sizeOffset(),
+        fontSize: 18 * sizeOffset(),
         fontStyle: 'italic',
         width: "55%"
     },
@@ -55,8 +55,8 @@ export const stylesCart = StyleSheet.create({
         alignItems: 'center',
     },
     emptyImg:{
-        width: 200,
-        height: 200
+        width: 200 * sizeOffset(),
+        height: 200 * sizeOffset()
     },
     emptyLink:{
         textAlign: 'center',

@@ -35,5 +35,9 @@
     "btn.send": "Send",
     "order.header.text": "Making an order",
     "search.price": "Price pay for '{{size}}':",
-    "panel.menu": "MENU"
+    "panel.menu": "MENU",
+    "cart.order":"Order on:",
+    "order.send": "Your order is accepted. You will be contacted for clarification!",
+    "cart.header": "In the product basket: {{count}}, \n for the amount of: {{totalPrice}} $",
+    "cart.empty": "Your shopping cart is empty \n Go shopping faster !!!"
 }

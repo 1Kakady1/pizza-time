@@ -6,17 +6,19 @@ import * as Animatable from 'react-native-animatable';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { CardCart } from '../card/card-cart/card-cart.component';
 import { IconButton } from 'react-native-paper';
+import { sizeOffset } from '../../consts/size';
+import { useTranslation } from 'react-i18next';
 
 const renderSeparatorDefault = () => <View style={stylesFlatListSeparator.separator}/>
 
 export const Cart = ({cart,count, onAdd, onSub ,goProducts, goOrder ,onClear, onChangeComments ,totalPrice, onRemove}: ICartProps) => {
 
-  const styles =  stylesCart;
-    //TODO: add translate
+    const styles =  stylesCart;
+    const [t] = useTranslation()
   return (
     <View style={{position: "relative", flex: 1}}>
         <ImageBackground  source={require("./resources/header-cart.jpg")} style={styles.imageHeader}>
-            <Text style={styles.textHeader}> В корзине товаров: {count}, {"\n"} на сумму: {totalPrice} $</Text>
+            <Text style={styles.textHeader}> {t("cart.header",{count,totalPrice})}</Text>
         </ImageBackground>
         {
             count > 0 ?
@@ -39,7 +41,7 @@ export const Cart = ({cart,count, onAdd, onSub ,goProducts, goOrder ,onClear, on
                 <TouchableOpacity onPress={goProducts} style={styles.emptyWrap}>
                     <Animatable.Image animation={"swing"} delay={200} iterationDelay={300} iterationCount={40} style={styles.emptyImg} source={require("./resources/cart-empty.png")} />
                     <Animatable.Text animation={"pulse"} delay={200} iterationDelay={300} iterationCount={40} style={styles.emptyLink}>
-                        {"Ваша корзина пуста \n Быстрей за покупками !!!"}
+                        {t("cart.empty")}
                     </Animatable.Text>
                 </TouchableOpacity>
             )
@@ -52,7 +54,7 @@ export const Cart = ({cart,count, onAdd, onSub ,goProducts, goOrder ,onClear, on
                         style={styles.navBtn}
                         icon={"close-circle-outline"}
                         color={"#fff"}
-                        size={34}
+                        size={34 * sizeOffset()}
                         onPress={onClear}
                     />
                 </Animatable.View>
@@ -63,7 +65,7 @@ export const Cart = ({cart,count, onAdd, onSub ,goProducts, goOrder ,onClear, on
                     style={styles.navBtn}
                     icon={"home"}
                     color={"#fff"}
-                    size={34}
+                    size={34 * sizeOffset()}
                     onPress={goProducts}
                 />
             </Animatable.View>
@@ -72,7 +74,7 @@ export const Cart = ({cart,count, onAdd, onSub ,goProducts, goOrder ,onClear, on
                     <IconButton
                         icon={"credit-card-multiple-outline"}
                         color={"#fff"}
-                        size={34}
+                        size={34 * sizeOffset()}
                         onPress={goOrder}
                     />
                 </Animatable.View>

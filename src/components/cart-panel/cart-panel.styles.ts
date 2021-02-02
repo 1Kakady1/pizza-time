@@ -1,6 +1,6 @@
 import {StyleSheet } from 'react-native';
 import {black, gray, primary, write} from '../../consts/colors.const';
-import { cartPanel } from '../../consts/size';
+import { cartPanel, sizeOffset } from '../../consts/size';
 
 export const stylesCartPanel = StyleSheet.create({
     container:{
@@ -30,8 +30,8 @@ export const stylesCartPanel = StyleSheet.create({
     },
     sizeBtn:{
         position: "relative",
-        width: 40,
-        height: 40,
+        width: 40 * sizeOffset(),
+        height: 40 * sizeOffset(),
         borderRadius: 40,
         backgroundColor: "#333939",
         padding: 0,
@@ -44,7 +44,7 @@ export const stylesCartPanel = StyleSheet.create({
     sizeLabel:{
         color: "#fff",
         textAlign: "center",
-        fontSize: 10,
+        fontSize: 10 * sizeOffset(),
         textTransform: "uppercase"
     },
     sizeBtnActive:{
@@ -56,14 +56,14 @@ export const stylesCartPanel = StyleSheet.create({
     counter:{
         marginLeft: 3,
         marginRight: 3,
-        width: 26,
-        height: 26,
+        width: 26 * sizeOffset(),
+        height: 26 * sizeOffset(),
         justifyContent: "center",
         alignItems: "center"
     },
     counterText:{
         color: write,
-        fontSize: 16,
+        fontSize: 16 * sizeOffset(),
         fontWeight: "bold"
     },
     colLeft:{

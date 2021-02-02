@@ -35,5 +35,9 @@
     "btn.send": "Отправить",
     "order.header.text": "Оформление заказа",
     "search.price": "Цена за '{{size}}':",
-    "panel.menu": "МЕНЮ"
+    "panel.menu": "МЕНЮ",
+    "cart.order":"Заказ на:",
+    "order.send": "Ваш заказ принят. С вами свяжутся для уточнения!",
+    "cart.header": "В корзине товаров: {{count}}, \n на сумму: {{totalPrice}} $",
+    "cart.empty": "Ваша корзина пуста \n Быстрей за покупками !!!"
 }
