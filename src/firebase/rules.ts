@@ -2,8 +2,11 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    //function prefix() {
+    //  return /databases/{database}/documents;
+    //}
     match /users/{user} {
-    	allow write: if false;
+    	allow write: if request.auth.uid != null;
       allow read: if request.auth.uid != null;
     }
     match /orders/{order} {

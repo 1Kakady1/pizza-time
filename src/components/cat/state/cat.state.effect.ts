@@ -1,7 +1,7 @@
 import { Action } from 'redux';
 import { ActionsObservable, ofType } from 'redux-observable';
 import { switchMap, map, withLatestFrom } from 'rxjs/operators';
-import { Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { getCatList } from '../../../services/api';
 import { toCatAction } from './cat.state.reducer';
@@ -11,13 +11,10 @@ export const catSetEffect = (
     state: Observable<Record<string, unknown>>
 ): Observable<Action> =>
     action$.pipe(
-        ofType(
-            toCatAction.catRequest.type,
-        ),
+        ofType(toCatAction.catRequest.type),
         withLatestFrom(state),
         switchMap(([, state]) => {
-            return getCatList()
-            .pipe(
+            return getCatList().pipe(
                 map((response) => {
                     if (response.error) {
                         return toCatAction.catRequestFailed(
@@ -25,17 +22,12 @@ export const catSetEffect = (
                         );
                     }
 
-                    if (response.data){
-                        return toCatAction.catRequestSuccess(
-                            response?.data
-                        );
+                    if (response.data) {
+                        return toCatAction.catRequestSuccess(response?.data);
                     }
 
-                    return toCatAction.catRequestFailed(
-                        'Data is empty'
-                    );
+                    return toCatAction.catRequestFailed('Data is empty');
                 })
             );
         })
     );
-

@@ -9,22 +9,18 @@ export const changeSizeProductEffect = (
     action$: ActionsObservable<PayloadAction<string>>
 ): Observable<PayloadAction<string>> =>
     action$.pipe(
-        ofType(
-            toCartPanelAction.changeSize.type
-            ),
+        ofType(toCartPanelAction.changeSize.type),
         map((action: PayloadAction<string>) => {
             return toPostAction.changeProductSize(action.payload);
         })
-);
+    );
 
 export const clearSizeProductEffect = (
     action$: ActionsObservable<PayloadAction>
 ): Observable<PayloadAction> =>
     action$.pipe(
-        ofType(
-            toPostAction.clearProduct.type
-            ),
+        ofType(toPostAction.clearProduct.type),
         map(() => {
             return toCartPanelAction.clearSize();
         })
-);
+    );

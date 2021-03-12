@@ -1,1 +1,1 @@
-export const SEARCH_KEY='search'
+export const SEARCH_KEY = 'search';

@@ -1,1 +1,1 @@
-export const SETTING_KEY='settinggKey'
+export const SETTING_KEY = 'settinggKey';

@@ -1,5 +1,5 @@
-import { ISetting } from "./setting.model";
+import { ISetting } from './setting.model';
 
-export const settinggInit:ISetting = { 
-   isOpen: false,
-}
+export const settinggInit: ISetting = {
+    isOpen: false
+};

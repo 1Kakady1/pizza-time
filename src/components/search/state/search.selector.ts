@@ -1,30 +1,16 @@
 import { createSelector } from '@reduxjs/toolkit';
-import {createFeatureSelector} from "../../../helpers/store"
+import { createFeatureSelector } from '../../../helpers/store';
 import { SEARCH_KEY } from './search.const';
-import { ISearch} from './search.model';
+import { ISearch } from './search.model';
 
-export const userSelector = createFeatureSelector<ISearch>(
-    SEARCH_KEY
-);
+export const userSelector = createFeatureSelector<ISearch>(SEARCH_KEY);
 
-const isOpen = createSelector(
-    userSelector,
-    ({ isOpen }) => isOpen
-);
+const isOpen = createSelector(userSelector, ({ isOpen }) => isOpen);
 
-const query = createSelector(
-    userSelector,
-    ({ query }) =>query
-);
+const query = createSelector(userSelector, ({ query }) => query);
 
-const result = createSelector(
-    userSelector,
-    ({ result }) => result
-);
+const result = createSelector(userSelector, ({ result }) => result);
 
-const isLoad = createSelector(
-    userSelector,
-    ({ isLoad }) => isLoad
-);
+const isLoad = createSelector(userSelector, ({ isLoad }) => isLoad);
 
-export const toSearchSelector = {isOpen, query, result, isLoad};
+export const toSearchSelector = { isOpen, query, result, isLoad };

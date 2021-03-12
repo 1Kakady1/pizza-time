@@ -7,20 +7,20 @@ export interface IProductsExcept {
     cat: string[];
     isTop: boolean;
     filters: {
-        size: string[]
+        size: string[];
     };
 }
 
-export type price = {[key:string]: number} | number
+export type price = { [key: string]: number } | number;
 
 export interface IProducts extends IProductsExcept {
     status: string;
     desc: string;
     name: string;
     code: number;
-    [key: string]: unknown
+    [key: string]: unknown;
 }
-export interface IProductsData{
+export interface IProductsData {
     products: IProducts[];
     isLoad: boolean;
     isRefresh: boolean;
@@ -30,7 +30,7 @@ export interface IProductsData{
     currentCat: string;
 }
 
-interface IProductsFilters{
+interface IProductsFilters {
     limit: number;
     offset: number;
 }

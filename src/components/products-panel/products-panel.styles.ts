@@ -1,40 +1,40 @@
-import {StyleSheet } from 'react-native';
-import {black, gray, write} from '../../consts/colors.const';
+import { StyleSheet } from 'react-native';
+import { black, gray, write } from '../../consts/colors.const';
 
 export const stylesPrductsPanel = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
-        backgroundColor: 'white', 
+        backgroundColor: 'white'
     },
     image: {
         flex: 1,
-        resizeMode: "cover",
-        justifyContent: "center"
+        resizeMode: 'cover',
+        justifyContent: 'center'
     },
-    overlay:{
+    overlay: {
         flex: 1,
-        flexDirection: "row",
-        backgroundColor: "#000000a0",
-        justifyContent: "space-between",
-        alignItems: "center",
-        position: "relative",
+        flexDirection: 'row',
+        backgroundColor: '#000000a0',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        position: 'relative'
     },
-    text:{
+    text: {
         fontSize: 20,
-        fontWeight: "bold",
+        fontWeight: 'bold',
         color: write
     },
-    btn:{
+    btn: {
         padding: 10
     },
-    catListWrap:{
-        position: "absolute",
+    catListWrap: {
+        position: 'absolute',
         bottom: 10,
         left: 0,
-        width: "100%",
+        width: '100%',
         height: 14,
-        alignItems: "center",
-        justifyContent: "center",
+        alignItems: 'center',
+        justifyContent: 'center',
         zIndex: 12
     }
-})
+});

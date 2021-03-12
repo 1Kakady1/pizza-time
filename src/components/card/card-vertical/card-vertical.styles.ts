@@ -1,30 +1,30 @@
-import {StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { black, gray, write } from '../../../consts/colors.const';
 
 export const stylesCardVertical = StyleSheet.create({
-    container:{
-        flexDirection: "column",
-        width: "100%",
-        height: "100%",
+    container: {
+        flexDirection: 'column',
+        width: '100%',
+        height: '100%',
         backgroundColor: write,
         borderRadius: 6
     },
-    preview:{
+    preview: {
         backgroundColor: gray[100],
-        width: "100%",
-        height: 132,
+        width: '100%',
+        height: 132
     },
-    postInfo:{
+    postInfo: {
         padding: 10,
-        flexDirection: "column"
+        flexDirection: 'column'
     },
-    title:{
+    title: {
         color: black[100],
         fontSize: 24,
-        paddingBottom: 6,
+        paddingBottom: 6
     },
-    desc:{
+    desc: {
         color: black[60],
         fontSize: 14
-    },
+    }
 });

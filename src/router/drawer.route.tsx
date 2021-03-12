@@ -1,31 +1,35 @@
-
 import React from 'react';
-import {  StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Animated from 'react-native-reanimated';
 import Home from '../screen/home/home.component';
 import About from '../screen/about/about.component';
-import { SCREENS, SCREENS_STACK} from '../consts/screens';
+import { SCREENS, SCREENS_STACK } from '../consts/screens';
 import { stylesDrawerRoute } from './styles';
-import { DrawerScreensNavigator  } from '../components/containers/drawer/drawer.component';
+import { DrawerScreensNavigator } from '../components/containers/drawer/drawer.component';
 import { Auth } from '../screen/auth/auth.compnent';
 import { Cart } from '../screen/cart/cart.component';
-
+import { RegistrationContainer } from '../screen/registration/registration.container';
 
 const Stack = createStackNavigator();
 
-const DrawerScreens = ({ style }:{style:any }) => {
+const DrawerScreens = ({ style }: { style: any }) => {
     const styles = stylesDrawerRoute;
 
-     return (
+    return (
         <Animated.View style={StyleSheet.flatten([styles.stack, style])}>
             <Stack.Navigator
                 initialRouteName={SCREENS.home}
                 screenOptions={{
                     headerShown: false
-                }}>
+                }}
+            >
                 <Stack.Screen name={SCREENS.home} component={Home} />
                 <Stack.Screen name={SCREENS.auth} component={Auth} />
+                <Stack.Screen
+                    name={SCREENS.registration}
+                    component={RegistrationContainer}
+                />
                 <Stack.Screen name={SCREENS.about} component={About} />
                 <Stack.Screen name={SCREENS.cart} component={Cart} />
             </Stack.Navigator>
@@ -33,9 +37,11 @@ const DrawerScreens = ({ style }:{style:any }) => {
     );
 };
 
-export const DrawerInit = ()=>{
-    return <DrawerScreensNavigator
-        name={SCREENS_STACK.drawlerChild}
-        screenDrawer={DrawerScreens}
-    />
-}
+export const DrawerInit = () => {
+    return (
+        <DrawerScreensNavigator
+            name={SCREENS_STACK.drawlerChild}
+            screenDrawer={DrawerScreens}
+        />
+    );
+};

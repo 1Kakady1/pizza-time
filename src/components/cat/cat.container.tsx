@@ -7,16 +7,28 @@ import { toCatAction } from './state/cat.state.reducer';
 
 import { toCategorySelector } from './state/cat.state.selector';
 
-export const CatContainer = ({stylesContainer}: {stylesContainer: StyleProp<ViewStyle>}) => {
-  
-    const dispatch = useDispatch(); 
-    const category =  useSelector(toCategorySelector.category)
-    const currentCat = useSelector(toCategorySelector.currentCat)
-    const isLoad = useSelector(toCategorySelector.isLoad)
-    const onChangeCat = (value: ICatList) => dispatch(toCatAction.setCat(value))
-    
-    return !isLoad === true ?  <View style={stylesContainer}>
-            <СatList currentCat={currentCat} cat={category} isLoad={isLoad} onChangeCat={onChangeCat} />
-        </View> 
-        : <View style={stylesContainer}/>
+export const CatContainer = ({
+    stylesContainer
+}: {
+    stylesContainer: StyleProp<ViewStyle>;
+}) => {
+    const dispatch = useDispatch();
+    const category = useSelector(toCategorySelector.category);
+    const currentCat = useSelector(toCategorySelector.currentCat);
+    const isLoad = useSelector(toCategorySelector.isLoad);
+    const onChangeCat = (value: ICatList) =>
+        dispatch(toCatAction.setCat(value));
+
+    return !isLoad === true ? (
+        <View style={stylesContainer}>
+            <СatList
+                currentCat={currentCat}
+                cat={category}
+                isLoad={isLoad}
+                onChangeCat={onChangeCat}
+            />
+        </View>
+    ) : (
+        <View style={stylesContainer} />
+    );
 };

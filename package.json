@@ -6,7 +6,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "prettier:write": "npx prettier --list-different --ignore-path=.gitignore \"**/*.ts(x)?\" --write",
+    "prettier:check": "npx prettier --list-different --ignore-path=.gitignore \"**/*.ts(x)?\""
   },
   "dependencies": {
     "@react-native-community/datetimepicker": "2.4.0",
@@ -29,6 +31,7 @@
     "formik": "^2.2.6",
     "i18next": "^19.8.4",
     "lodash": "^4.17.20",
+    "prettier": "^2.2.1",
     "react": "~16.11.0",
     "react-devtools": "^4.10.1",
     "react-dom": "~16.11.0",
@@ -39,18 +42,20 @@
     "react-native-elements": "^2.3.2",
     "react-native-flash-message": "^0.1.16",
     "react-native-gesture-handler": "~1.6.0",
+    "react-native-masked-text": "^1.13.0",
     "react-native-modal": "^11.6.1",
-    "react-native-paper": "^4.2.0",
+    "react-native-paper": "^4.7.2",
     "react-native-reanimated": "~1.9.0",
     "react-native-safe-area-context": "~3.0.7",
     "react-native-screens": "~2.9.0",
+    "react-native-share": "^5.1.4",
     "react-native-skeleton-content": "^1.0.20",
     "react-native-skeleton-placeholder": "^3.0.2",
     "react-native-slick": "^1.6.0",
     "react-native-text-ticker": "^1.10.0",
     "react-native-uuid": "^1.4.9",
     "react-native-vector-icons": "^7.1.0",
-    "react-native-web": "~0.11.7",
+    "react-native-web": "^0.15.0",
     "react-navigation": "^4.4.0",
     "react-navigation-drawer": "^2.5.0",
     "react-navigation-stack": "^2.8.2",
@@ -61,7 +66,8 @@
     "redux-thunk": "^2.3.0",
     "rxjs": "^6.6.3",
     "yarn": "^1.22.10",
-    "yup": "^0.32.8"
+    "yup": "^0.32.8",
+    "yup-phone": "^1.2.19"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
@@ -70,5 +76,10 @@
     "@types/react-native": "~0.62.13",
     "typescript": "~3.9.5"
   },
-  "private": true
+  "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+  }
 }

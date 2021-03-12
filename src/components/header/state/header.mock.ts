@@ -1,5 +1,5 @@
-import { IHeader } from "./header.model";
+import { IHeader } from './header.model';
 
-export const settingInit:IHeader = { 
-   isOpenSetting: false,
-}
+export const settingInit: IHeader = {
+    isOpenSetting: false
+};

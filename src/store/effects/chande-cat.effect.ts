@@ -11,35 +11,29 @@ export const setCatEffect = (
     action$: ActionsObservable<PayloadAction<ICatList>>
 ): Observable<PayloadAction<ICatList>> =>
     action$.pipe(
-        ofType(
-                toCatAction.setCat.type
-            ),
+        ofType(toCatAction.setCat.type),
         map((action: PayloadAction<ICatList>) => {
             //toProductsAction.setCurrentCat(action.payload.name)
             return toProductsPanelAction.changeCat(action.payload);
         })
-);
+    );
 
 export const setCurrentCatEffect = (
     action$: ActionsObservable<PayloadAction<ICatList>>
 ): Observable<PayloadAction<string>> =>
     action$.pipe(
-        ofType(
-                toCatAction.setCat.type
-            ),
+        ofType(toCatAction.setCat.type),
         map((action: PayloadAction<ICatList>) => {
             return toProductsAction.setCurrentCat(action.payload.name);
         })
-);
+    );
 
 export const initCatEffect = (
     action$: ActionsObservable<PayloadAction<ICatList[]>>
 ): Observable<PayloadAction<ICatList[]>> =>
     action$.pipe(
-        ofType(
-                toCatAction.catRequestSuccess.type
-            ),
+        ofType(toCatAction.catRequestSuccess.type),
         map((action: PayloadAction<ICatList[]>) => {
             return toProductsPanelAction.setInitCat(action.payload);
         })
-);
+    );

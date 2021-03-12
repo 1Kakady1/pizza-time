@@ -9,5 +9,4 @@ export interface ICatData {
     currentCat: string;
     isLoad: boolean;
     error: string;
- }
-
+}

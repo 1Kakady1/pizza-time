@@ -1,117 +1,122 @@
-import {StyleSheet } from 'react-native';
-import {black, gray, primary, text, write} from '../../../consts/colors.const';
+import { StyleSheet } from 'react-native';
+import {
+    black,
+    gray,
+    primary,
+    text,
+    write
+} from '../../../consts/colors.const';
 import { sizeOffset } from '../../../consts/size';
 
 export const stylesCardHorizontal = StyleSheet.create({
     item: {
-        flex:1,
-        flexDirection: "row",
+        flex: 1,
+        flexDirection: 'row',
         flexWrap: 'nowrap',
         borderBottomLeftRadius: 12,
-		borderBottomRightRadius: 12,
-		borderTopLeftRadius: 12,
-		borderTopRightRadius: 12,
+        borderBottomRightRadius: 12,
+        borderTopLeftRadius: 12,
+        borderTopRightRadius: 12,
         backgroundColor: write,
-        position:"relative"
+        position: 'relative'
     },
     itemPlaceholderWrap: {
-        flexDirection: "row",
-        flexWrap: 'nowrap',
+        flexDirection: 'row',
+        flexWrap: 'nowrap'
     },
     itemPlaceholder: {
-        flexDirection: "row",
+        flexDirection: 'row',
         flexWrap: 'nowrap',
         borderBottomLeftRadius: 12,
-		borderBottomRightRadius: 12,
-		borderTopLeftRadius: 12,
-		borderTopRightRadius: 12,
+        borderBottomRightRadius: 12,
+        borderTopLeftRadius: 12,
+        borderTopRightRadius: 12,
         backgroundColor: write,
         marginBottom: 10
     },
     infoWrap: {
-        flex:1,
+        flex: 1,
         flexDirection: 'column',
         margin: 14,
         alignItems: 'flex-start',
-        justifyContent: "flex-start",
-        overflow: "hidden"
+        justifyContent: 'flex-start',
+        overflow: 'hidden'
     },
-    colRight:{
+    colRight: {
         flex: 2,
         flexDirection: 'column',
         alignItems: 'flex-start',
-        justifyContent: "flex-start",
+        justifyContent: 'flex-start'
     },
-    colLeft:{
+    colLeft: {
         flexDirection: 'row',
-        flex: 7,
+        flex: 7
     },
-    info:{
-        flexDirection: "row",
+    info: {
+        flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: "flex-start",
+        justifyContent: 'flex-start',
         marginTop: 4,
         marginBottom: 4
     },
-    text:{
+    text: {
         color: text.title,
-        fontSize: 24 * sizeOffset(),
-        
+        fontSize: 24 * sizeOffset()
     },
-    desc:{
+    desc: {
         color: black[60],
         fontSize: 14 * sizeOffset()
     },
-    preview:{
+    preview: {
         backgroundColor: gray[100],
         width: 124,
         height: 124,
         borderRadius: 12
     },
-    img:{
-        width: '100%', 
-        height: "100%",
+    img: {
+        width: '100%',
+        height: '100%',
         borderRadius: 12
     },
-    size:{
+    size: {
         marginLeft: 6,
         marginRight: 6,
         color: text.title,
-        fontSize: 14 * sizeOffset(),
+        fontSize: 14 * sizeOffset()
     },
-    priceWrap:{
-        width: "100%",
-        height: "100%",
+    priceWrap: {
+        width: '100%',
+        height: '100%',
         flex: 1,
         justifyContent: 'center',
-        alignItems: "center"
+        alignItems: 'center'
     },
-    price:{
+    price: {
         fontSize: 22,
         color: primary[1]
     },
-    icon:{
-        color: text.title,
+    icon: {
+        color: text.title
     },
-    badgeWrap:{
-        position: "absolute",
+    badgeWrap: {
+        position: 'absolute',
         top: 0,
         right: 4
     },
-    badgbe:{
+    badgbe: {
         height: 48,
-        width: 48 
+        width: 48
     },
-    badgeImg:{
-        width: "100%",
-        height: "100%"
+    badgeImg: {
+        width: '100%',
+        height: '100%'
     },
-    badgeText:{
+    badgeText: {
         color: write,
         fontSize: 8,
-        fontWeight: "bold",
-        position: "absolute",
+        fontWeight: 'bold',
+        position: 'absolute',
         top: '30%',
         left: '33%'
-    },
+    }
 });

@@ -1,12 +1,12 @@
-import {StyleSheet } from 'react-native';
-import {primary} from '../../consts/colors.const';
+import { StyleSheet } from 'react-native';
+import { primary } from '../../consts/colors.const';
 
 export const stylesFab = StyleSheet.create({
-    fab:{
+    fab: {
         position: 'absolute',
         margin: 16,
         right: 0,
         bottom: 0,
         backgroundColor: primary[1]
-    },
-})
+    }
+});

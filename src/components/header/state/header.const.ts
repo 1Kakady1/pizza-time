@@ -1,1 +1,1 @@
-export const HEADER_KEY='headerKey'
+export const HEADER_KEY = 'headerKey';

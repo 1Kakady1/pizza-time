@@ -1,1 +1,1 @@
-export const CAT_KEY='catList'
+export const CAT_KEY = 'catList';

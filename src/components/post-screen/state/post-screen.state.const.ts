@@ -1,1 +1,1 @@
-export const POST_KEY='post'
+export const POST_KEY = 'post';

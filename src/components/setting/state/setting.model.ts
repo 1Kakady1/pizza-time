@@ -1,3 +1,3 @@
-export interface ISetting{
+export interface ISetting {
     isOpen: boolean;
 }

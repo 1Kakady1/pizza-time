@@ -1,60 +1,58 @@
-import {StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { gray } from '../../../consts/colors.const';
 import { windowWidth } from '../../../helpers/functions';
 
 export const stylesSearch = StyleSheet.create({
     container: {
         paddingTop: 30,
-        backgroundColor: gray[30], 
-        width: "100%",
+        backgroundColor: gray[30],
+        width: '100%',
         bottom: 0,
-        position: "absolute",
+        position: 'absolute',
         borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
+        borderTopRightRadius: 20
     },
-    loader:{
-        position: "absolute",
+    loader: {
+        position: 'absolute',
         bottom: -20,
         left: 20,
-        width: "100%",
+        width: '100%',
         height: 24,
-        justifyContent: "center",
-        alignItems: "center",
-        borderBottomColor: "red"
-    
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderBottomColor: 'red'
     },
-    modal:{
+    modal: {
         margin: 0,
         minHeight: Math.round(windowWidth)
     },
-    hrWrap:{
-        position: "absolute",
+    hrWrap: {
+        position: 'absolute',
         top: 4,
-        width: "100%",
+        width: '100%',
         height: 24,
-        justifyContent: "center",
-        alignItems: "center"
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    hr:{
+    hr: {
         borderRadius: 10,
         width: 230,
         height: 6,
         backgroundColor: gray[50]
     },
-    search:{
+    search: {
         padding: 20,
-        position: "relative"
+        position: 'relative'
     },
-    result:{
-        padding: 20,
+    result: {
+        padding: 20
     },
-    resultEmpty:{
+    resultEmpty: {
         flex: 1,
-        height: "100%",
-        width: " 100%",
-        alignItems: "center",
-        justifyContent: "center",
+        height: '100%',
+        width: ' 100%',
+        alignItems: 'center',
+        justifyContent: 'center',
         marginTop: 42
-    },
+    }
 });
-

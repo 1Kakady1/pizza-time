@@ -1,1 +1,1 @@
-export const CART_PANEL_KEY='cartPanel'
+export const CART_PANEL_KEY = 'cartPanel';

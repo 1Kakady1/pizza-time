@@ -1,9 +1,9 @@
-import { ISearch } from "./search.model";
+import { ISearch } from './search.model';
 
-export const searchInit:ISearch = { 
-   isOpen: false,
-   query: "",
-   result: [],
-   isLoad: false,
-   error: ""
-}
+export const searchInit: ISearch = {
+    isOpen: false,
+    query: '',
+    result: [],
+    isLoad: false,
+    error: ''
+};

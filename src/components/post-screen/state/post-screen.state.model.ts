@@ -1,7 +1,5 @@
-import { IProducts } from "../../products/state/products.state.model";
-export interface IPostItem extends IProducts{
-
-}
+import { IProducts } from '../../products/state/products.state.model';
+export interface IPostItem extends IProducts {}
 export interface IPost {
     post?: IPostItem;
     id: string;

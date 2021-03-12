@@ -1,10 +1,10 @@
 import { Action } from 'redux';
 import { ActionsObservable, ofType } from 'redux-observable';
 import { switchMap, map, withLatestFrom } from 'rxjs/operators';
-import { Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 
-import { toCartAction} from './cart.state.reducer';
-export {}
+import { toCartAction } from './cart.state.reducer';
+export {};
 /*
 export const userSetEffect = (
     action$: ActionsObservable<Action>,

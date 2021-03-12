@@ -1,5 +1,5 @@
-import { ICartPanel } from "./cart-panel.state.model";
+import { ICartPanel } from './cart-panel.state.model';
 
-export const cartInit:ICartPanel = {
-   size: ""
-}
+export const cartInit: ICartPanel = {
+    size: ''
+};

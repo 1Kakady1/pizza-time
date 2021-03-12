@@ -1,6 +1,6 @@
-import { IProducts } from "../../products/state/products.state.model";
+import { IProducts } from '../../products/state/products.state.model';
 
-export interface ISearch{
+export interface ISearch {
     isOpen: boolean;
     query: string;
     result: ISearchResult[];
@@ -8,4 +8,4 @@ export interface ISearch{
     error: string;
 }
 
-export interface ISearchResult extends IProducts{}
+export interface ISearchResult extends IProducts {}

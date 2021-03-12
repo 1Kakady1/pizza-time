@@ -9,22 +9,18 @@ export const setOpenSearchEffect = (
     action$: ActionsObservable<PayloadAction>
 ): Observable<PayloadAction> =>
     action$.pipe(
-        ofType(
-            toProductsPanelAction.onOpenSearch.type
-            ),
+        ofType(toProductsPanelAction.onOpenSearch.type),
         map(() => {
             return toSearchAction.onOpen();
         })
-);
+    );
 
 export const setCloseSearchEffect = (
     action$: ActionsObservable<PayloadAction>
 ): Observable<PayloadAction> =>
     action$.pipe(
-        ofType(
-            toSearchAction.onClose.type
-            ),
+        ofType(toSearchAction.onClose.type),
         map(() => {
             return toProductsPanelAction.onCloseSearch();
         })
-);
+    );

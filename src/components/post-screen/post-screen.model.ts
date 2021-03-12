@@ -1,17 +1,17 @@
-import { IProducts } from "../products/state/products.state.model";
+import { IProducts } from '../products/state/products.state.model';
 
-export interface IPostItemProps{
+export interface IPostItemProps {
     post: IProducts;
     count: ICounter;
-    sliderData:  IProducts[];
+    sliderData: IProducts[];
     isLoad: boolean;
     isRefresh: boolean;
-    onRefresh: ()=> void;
-    nav: (id: string)=> void;
+    onRefresh: () => void;
+    nav: (id: string) => void;
     size: string;
 }
 
-export interface ICounter{
+export interface ICounter {
     count: number;
-    [key: string]: number
+    [key: string]: number;
 }

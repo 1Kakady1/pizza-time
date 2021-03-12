@@ -5,13 +5,12 @@ import { stylesFab } from './fab.styles';
 
 export const Fab = ({
     onPress,
-    icon="plus",
-    small=false,
-    disabled=false,
-    visible=true,
+    icon = 'plus',
+    small = false,
+    disabled = false,
+    visible = true,
     onLongPress
 }: IFabProps) => {
-
     const styles = stylesFab;
 
     return (
