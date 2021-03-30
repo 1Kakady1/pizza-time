@@ -10,6 +10,7 @@ import { DrawerScreensNavigator } from '../components/containers/drawer/drawer.c
 import { Auth } from '../screen/auth/auth.compnent';
 import { Cart } from '../screen/cart/cart.component';
 import { RegistrationContainer } from '../screen/registration/registration.container';
+import { Profile } from '../screen/profile/profile.component';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,7 @@ const DrawerScreens = ({ style }: { style: any }) => {
                     component={RegistrationContainer}
                 />
                 <Stack.Screen name={SCREENS.about} component={About} />
+                <Stack.Screen name={SCREENS.user} component={Profile} />
                 <Stack.Screen name={SCREENS.cart} component={Cart} />
             </Stack.Navigator>
         </Animated.View>

@@ -22,9 +22,9 @@ export const Order = ({
     const styles = stylesOrder;
     const { t } = useTranslation();
     const initValue: IOrderForm = {
-        email: '',
-        name: '',
-        address: '',
+        email: user.email,
+        name: user.name,
+        address: user.address,
         comments: '',
         date: new Date()
     };
@@ -38,6 +38,7 @@ export const Order = ({
     offsetDate.setDate(currentDateTime.getDate() + 4);
     offsetDate.setHours(currentDateTime.getHours() + 1);
 
+    // TODO: move to helpers
     const getDate = (datetime: Date) => {
         const date = datetimeSplit(datetime);
         return `${date.day < 10 ? 0 : ''}${date.day}.${

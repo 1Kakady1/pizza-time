@@ -1,5 +1,7 @@
 node_modules/**/*
 .expo/*
+.tmp/*
+.idea/*
 .vscode/*
 npm-debug.*
 *.jks
@@ -15,3 +17,4 @@ package-lock.json
 yarn.lock
 yarn-error.log
 post-change/
+debug.log

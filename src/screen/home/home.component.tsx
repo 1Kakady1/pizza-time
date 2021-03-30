@@ -4,7 +4,7 @@ import { stylesHome } from './home.styles';
 import { statusBar } from '../../consts/colors.const';
 import { StatusBar } from 'expo-status-bar';
 import { ProductsContainer } from '../../components/products/products.container';
-import { SearchContainer } from '../../components/search/components/search.container';
+import { SearchModule } from '../../components/search/search.module';
 
 const Home = () => {
     const styles = stylesHome;
@@ -13,7 +13,7 @@ const Home = () => {
         <View style={styles.container}>
             <StatusBar backgroundColor={statusBar.bg[60]} style="light" />
             <ProductsContainer />
-            <SearchContainer />
+            <SearchModule.component />
         </View>
     );
 };

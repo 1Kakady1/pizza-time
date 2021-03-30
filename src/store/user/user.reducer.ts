@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { userInit } from './user.init';
 import { IUser, IUserActionProps } from './user.model';
-
+// TODO: перенести все в профиль
 const loginRequest = (
     state: IUser,
     { payload }: { payload: IUserActionProps }

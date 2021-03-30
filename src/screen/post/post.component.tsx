@@ -6,12 +6,12 @@ import { StatusBar } from 'expo-status-bar';
 import { statusBar } from '../../consts/colors.const';
 import { PostDefault } from '../../components/containers/post/container.component';
 import { CartBtnContainer } from '../../components/cart-btn/cart-brn.container';
-import { ShareContainer } from '../../components/share/components/share.container';
+import { ShareModule } from '../../components/share/share.module';
 
 const Post = () => {
     const styles = stylesPost;
 
-    const factory = [ShareContainer, CartBtnContainer];
+    const factory = [ShareModule.component, CartBtnContainer];
 
     const Factory = (props?: any) => {
         return factory.map((item, index) => (

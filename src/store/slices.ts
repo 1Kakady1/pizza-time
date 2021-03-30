@@ -9,6 +9,7 @@ import { productsPanelSlice } from '../components/products-panel/state/products-
 import { SearchModule } from '../components/search/search.module';
 import { catSlice } from '../components/cat/state/cat.state.reducer';
 import { ShareModule } from '../components/share/share.module';
+import { ProfileModule } from '../components/profile/profile.module';
 
 export const slices = {
     [userSlice.name]: userSlice.reducer,
@@ -21,7 +22,8 @@ export const slices = {
     [productsPanelSlice.name]: productsPanelSlice.reducer,
     [catSlice.name]: catSlice.reducer,
     ...SearchModule.reducer,
-    ...ShareModule.reducer
+    ...ShareModule.reducer,
+    ...ProfileModule.reducer
 };
 
 export const sliceKeys = [
@@ -34,5 +36,6 @@ export const sliceKeys = [
     cartPanelSlice.name, //6
     SearchModule.name, //7
     productsPanelSlice.name, //8
-    catSlice.name //9
+    catSlice.name, //9
+    ProfileModule.name // 10
 ];

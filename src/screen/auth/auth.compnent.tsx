@@ -24,6 +24,9 @@ import { StatusBar } from 'expo-status-bar';
 import { primary, statusBar } from '../../consts/colors.const';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
+import { SCREENS, SCREENS_STACK } from '../../consts/screens';
+
+//TODO: !!!!change form to Formik+yup!!!!
 
 const validator = new Validator();
 
@@ -33,6 +36,15 @@ export const Auth = () => {
     const isAuth = useSelector(toUser.isAuth);
     const [t] = useTranslation();
     const styles = stylesAuth;
+
+    const goHome = () => {
+        nav.navigate(SCREENS_STACK.drawer, {
+            screen: SCREENS_STACK.drawlerChild,
+            params: {
+                screen: SCREENS.home
+            }
+        });
+    };
 
     const fadeAnim: IAnim = {
         email: useRef(new Animated.Value(300)).current,
@@ -179,7 +191,6 @@ export const Auth = () => {
             password: { ...textPassword }
         };
         inputs[type].value = text;
-        console.log('inputs----->', inputs[type]);
 
         if (inputs[type].value.length > 3) inputs[type].init = true;
 
@@ -218,6 +229,7 @@ export const Auth = () => {
                     password: textPassword.value
                 })
             );
+            goHome();
         } else {
             Alert.alert('', t('msg.modal.error'), [{ text: 'OK' }], {
                 cancelable: false
@@ -248,6 +260,7 @@ export const Auth = () => {
                     </View>
                     <View style={styles.inputContainer}>
                         <TextInput
+                            textAlign="left"
                             ref={refEmail}
                             theme={{
                                 colors: {
@@ -286,6 +299,7 @@ export const Auth = () => {
                     </View>
                     <View style={styles.inputContainer}>
                         <TextInput
+                            textAlign="left"
                             ref={refPassword}
                             theme={{
                                 colors: {

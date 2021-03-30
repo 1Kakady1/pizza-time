@@ -6,6 +6,7 @@ import _ from 'lodash';
 import './src/i18n/i18n';
 import { store } from './src/store';
 import { Router } from './src/router/route';
+//import * as Sentry from 'sentry-expo';
 
 YellowBox.ignoreWarnings(['Setting a timer']);
 const _console = _.clone(console);
@@ -15,6 +16,14 @@ console.warn = (message: any) => {
         _console.warn(message);
     }
 };
+
+/*
+Sentry.init({
+  dsn: '#',
+  enableInExpoDevelopment: true,
+  debug: true,
+});
+*/
 
 export default function App() {
     return (

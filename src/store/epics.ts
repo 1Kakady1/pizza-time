@@ -6,6 +6,7 @@ import {
 } from '../components/post-screen/state/post-screen.state.effect';
 import { productsSetEffect } from '../components/products/state/products.state.effect';
 import { searchSetEffect } from '../components/search/state/search.effect';
+import { setProfileEffect } from './effects/chage-profile';
 import {
     initCatEffect,
     setCatEffect,
@@ -45,7 +46,8 @@ const rootEpic = combineEpics(
     initCatEffect,
     setCatEffect,
     setCurrentCatEffect,
-    setShareInfoEffect
+    setShareInfoEffect,
+    setProfileEffect
 );
 
 export default rootEpic;

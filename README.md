@@ -1,3 +1,6 @@
+# Languages
+[RU](README.RU.md)
+
 # Pizza time
 
 Demo application for selling pizza implemented using the Expo SDK
@@ -42,11 +45,14 @@ You must have an account in expo
 * [EXPO](https://github.com/expo/expo)
 
 ## Used libraries
-redux
-rxjs
-i18n
-firebase
-ect
+* typescript
+* redux-toolkit
+* redux-observable
+* react native paper
+* rxjs
+* i18n
+* firebase
+* expo libs
 
 ## License
 

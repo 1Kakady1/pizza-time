@@ -112,29 +112,62 @@ export default function DrawerContent({
                                 );
                             }}
                         />
-                        <DrawerItem
-                            icon={({ size }) => (
-                                <Icon
-                                    name="account-circle-outline"
-                                    color={drawer.text}
-                                    size={size}
-                                />
-                            )}
-                            label={() => (
-                                <Text style={styles.menuItem}>{t('reg')}</Text>
-                            )}
-                            onPress={() => {
-                                drawerProps.navigation.navigate(
-                                    SCREENS_STACK.drawer,
-                                    {
-                                        screen: SCREENS_STACK.drawlerChild,
-                                        params: {
-                                            screen: SCREENS.registration
+                        {!isAuth && (
+                            <DrawerItem
+                                icon={({ size }) => (
+                                    <Icon
+                                        name="account-circle-outline"
+                                        color={drawer.text}
+                                        size={size}
+                                    />
+                                )}
+                                label={() => (
+                                    <Text style={styles.menuItem}>
+                                        {t('reg')}
+                                    </Text>
+                                )}
+                                onPress={() => {
+                                    drawerProps.navigation.navigate(
+                                        SCREENS_STACK.drawer,
+                                        {
+                                            screen: SCREENS_STACK.drawlerChild,
+                                            params: {
+                                                screen: SCREENS.registration
+                                            }
                                         }
-                                    }
-                                );
-                            }}
-                        />
+                                    );
+                                }}
+                            />
+                        )}
+
+                        {isAuth && (
+                            <DrawerItem
+                                icon={({ size }) => (
+                                    <Icon
+                                        name="account-circle-outline"
+                                        color={drawer.text}
+                                        size={size}
+                                    />
+                                )}
+                                label={() => (
+                                    <Text style={styles.menuItem}>
+                                        {t('user.profile')}
+                                    </Text>
+                                )}
+                                onPress={() => {
+                                    drawerProps.navigation.navigate(
+                                        SCREENS_STACK.drawer,
+                                        {
+                                            screen: SCREENS_STACK.drawlerChild,
+                                            params: {
+                                                screen: SCREENS.user
+                                            }
+                                        }
+                                    );
+                                }}
+                            />
+                        )}
+
                         <DrawerItem
                             icon={({ size }) => (
                                 <Icon

@@ -13,10 +13,10 @@ import { toUser } from '../../store/user/user.selector';
 export const OrderContainer = () => {
     const dispatch = useDispatch();
     const cart = useSelector(toCartSelector.cart);
-    const phone = useSelector(toUser.phone) as string;
-    const address = useSelector(toUser.address) as string;
-    const name = useSelector(toUser.name);
-    const email = useSelector(toUser.email);
+    const phone = (useSelector(toUser.phone) as string) || '';
+    const address = (useSelector(toUser.address) as string) || '';
+    const name = useSelector(toUser.name) || '';
+    const email = useSelector(toUser.email) || '';
     const userID = useSelector(toUser.userID) || '';
 
     const sendOrder = (order: IOrderForm, value: ICartItem[], key: string) =>

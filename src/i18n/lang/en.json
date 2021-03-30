@@ -46,5 +46,9 @@
     "order.send": "Your order is accepted. You will be contacted for clarification!",
     "cart.header": "In the product basket: {{count}}, \n for the amount of: {{totalPrice}} $",
     "cart.empty": "Your shopping cart is empty \n Go shopping faster !!!",
-    "reg.ok": "Registration completed. You can log in."
+    "reg.ok": "Registration completed. You can log in.",
+    "user.profile": "Profile",
+    "cat.all": "All",
+    "cat.drinks": "Drinks",
+    "cat.pizza": "Pizza"
 }

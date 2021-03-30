@@ -2,6 +2,7 @@ import * as firebase from 'firebase';
 import '@firebase/auth';
 import '@firebase/firestore';
 import 'firebase/firestore';
+//import 'firebase/analytics';
 import firebaseConfig from './config';
 
 let dbh: any = null;
@@ -13,4 +14,9 @@ if (!fbDefault.apps.length) {
     dbh = fbDefault.firestore();
 }
 
-export const fb = { firebase: fbDefault, store: fbDefault.storage, dbh };
+export const fb = {
+    firebase: fbDefault,
+    store: fbDefault.storage,
+    dbh,
+    analytics: fbDefault.analytics
+};

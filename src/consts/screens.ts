@@ -2,6 +2,7 @@ export const SCREENS = {
     home: 'HomeScreen',
     postItem: 'PostItemScreen',
     about: 'AboutScreen',
+    user: 'UserScreen',
     auth: 'AuthScreen',
     cart: 'CartScreen',
     order: 'OrderScreen',
