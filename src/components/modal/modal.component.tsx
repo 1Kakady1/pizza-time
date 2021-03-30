@@ -7,7 +7,6 @@ import { stylesModal } from './modal.styles';
 export const ModalWindow = ({ btn, children, btnProps }: IModalProps) => {
     const [visible, setVisible] = React.useState(false);
     const showModal = () => {
-        console.log('show');
         setVisible(true);
     };
     const hideModal = () => setVisible(false);

@@ -94,3 +94,14 @@ export const createDataSlide = (data: any[], countItem: number): any[][] => {
 
     return newData;
 };
+
+export const getUriFileInfo = (uri: string) => {
+    const filename = uri.split('/').pop();
+    const match = /\.(\w+)$/.exec(filename || '');
+    const type = match ? `image/${match[1]}` : `image`;
+
+    return {
+        filename,
+        type
+    };
+};

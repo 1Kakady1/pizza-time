@@ -107,6 +107,46 @@ export const getUser = (
     );
 };
 
+export const updateFieldUser = (
+    userID: string,
+    field: string,
+    data: string | []
+): Observable<IResponse<{}, string, IUser>> => {
+    return from(
+        fb.dbh.collection('users').where('userID', '==', userID).get()
+    ).pipe(
+        switchMap((res: any) => {
+            let id: string = '';
+            let i = 0,
+                BreakException = {};
+
+            try {
+                res.forEach(function (doc: { id: string }) {
+                    id = doc.id;
+                    if (i === 0) throw BreakException;
+                });
+            } catch (e) {
+                if (e !== BreakException) throw e;
+            }
+
+            return from(
+                fb.dbh
+                    .collection('users')
+                    .doc(id)
+                    .update({
+                        [field]: data
+                    })
+            ).pipe(
+                switchMap((res: any) => {
+                    return of({ data: res });
+                }),
+                catchError((e) => of({ error: e }))
+            );
+        }),
+        catchError((e) => of({ error: e }))
+    );
+};
+
 export const getProductsById = (
     id: string
 ): Observable<IResponse<{}, string, IProducts>> => {

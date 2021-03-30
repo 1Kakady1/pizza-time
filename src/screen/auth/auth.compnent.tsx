@@ -92,6 +92,7 @@ export const Auth = () => {
                         email: user.email
                     })
                 );
+                goHome();
             }
         });
 

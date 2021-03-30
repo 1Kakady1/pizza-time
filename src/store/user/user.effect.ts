@@ -22,7 +22,6 @@ export const userSetEffect = (
             }).pipe(
                 map((response) => {
                     if (response.error) {
-                        console.log('adaad', response.error);
                         Alert.alert(
                             '',
                             response.error.toString(),
@@ -35,9 +34,10 @@ export const userSetEffect = (
                     }
 
                     if (response.data) {
-                        return toUserAction.loginActionRequestSuccess(
-                            response?.data
-                        );
+                        return toUserAction.loginActionRequestSuccess({
+                            ...response.data,
+                            email: toUser.email(state)
+                        });
                     }
 
                     return toUserAction.loginActionRequestFFailed(
@@ -71,9 +71,10 @@ export const userCheckRememberEffect = (
                     }
 
                     if (response.data) {
-                        return toUserAction.getUserActionRequestSuccess(
-                            response?.data
-                        );
+                        return toUserAction.getUserActionRequestSuccess({
+                            ...response.data,
+                            email: toUser.email(state)
+                        });
                     }
 
                     return toUserAction.getUserActionRequestFailed(

@@ -19,6 +19,18 @@ export const profileSlice = createSlice({
         },
         outProfile: (state: IProfile) => {
             state = profileInit;
+        },
+        updateProfile: (
+            state: IProfile,
+            { payload }: { payload: { data: string | []; field: string } }
+        ) => {
+            return {
+                ...state,
+                user: {
+                    ...state.user,
+                    [payload.field]: payload.data
+                }
+            };
         }
     }
 });

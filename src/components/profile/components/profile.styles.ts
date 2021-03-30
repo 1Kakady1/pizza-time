@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { primary } from '../../../consts/colors.const';
+import { primary, write } from '../../../consts/colors.const';
 
 export const stylesProfile = StyleSheet.create({
     container: {
@@ -28,5 +28,21 @@ export const stylesProfile = StyleSheet.create({
         borderRadius: 128,
         borderColor: primary[1],
         borderWidth: 3
+    },
+    uplodePreview: {
+        position: 'absolute',
+        top: 6,
+        right: 2,
+        display: 'flex',
+        flexWrap: 'nowrap',
+        flexDirection: 'row'
+    },
+    uplodeText: {
+        color: write,
+        fontWeight: '900'
+    },
+    uplodeProcent: {
+        color: write,
+        fontWeight: '900'
     }
 });
