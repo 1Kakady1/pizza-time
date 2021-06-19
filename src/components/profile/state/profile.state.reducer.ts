@@ -17,8 +17,15 @@ export const profileSlice = createSlice({
                 user: { ...payload }
             };
         },
-        outProfile: (state: IProfile) => {
-            state = profileInit;
+        outProfile: () => {
+            return {
+                isAuth: false,
+                orders: [],
+                error: '',
+                user: {
+                    ...profileInit.user
+                }
+            };
         },
         updateProfile: (
             state: IProfile,
@@ -35,4 +42,4 @@ export const profileSlice = createSlice({
     }
 });
 
-export const toProfileAction = profileSlice.actions;
+export const toProfileAction = { ...profileSlice.actions };

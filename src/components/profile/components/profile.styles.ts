@@ -11,7 +11,22 @@ export const stylesProfile = StyleSheet.create({
         height: 200
     },
     header: {
-        position: 'relative'
+        position: 'relative',
+        marginBottom: 66
+    },
+    navBtn: {
+        backgroundColor: primary[1],
+        borderRadius: 40
+    },
+    navBtnExit: {
+        position: 'absolute',
+        left: 40,
+        bottom: -9
+    },
+    navBtnOrder: {
+        position: 'absolute',
+        right: 40,
+        bottom: -9
     },
     previewWrap: {
         position: 'absolute',
@@ -37,6 +52,12 @@ export const stylesProfile = StyleSheet.create({
         flexWrap: 'nowrap',
         flexDirection: 'row'
     },
+    uplodeIcon: {
+        position: 'absolute',
+        right: 20,
+        top: 10,
+        zIndex: 3
+    },
     uplodeText: {
         color: write,
         fontWeight: '900'
@@ -44,5 +65,20 @@ export const stylesProfile = StyleSheet.create({
     uplodeProcent: {
         color: write,
         fontWeight: '900'
+    },
+    profileInfoList: {
+        padding: 10
+    },
+    profileInfoItem: {
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'row'
+    },
+    profileInfoItemIcon: {
+        marginRight: 12
+    },
+    profileInfoItemText: {
+        fontWeight: '600',
+        fontSize: 18
     }
 });

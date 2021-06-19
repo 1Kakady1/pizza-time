@@ -106,6 +106,20 @@ export const getUser = (
         catchError((e) => of({ error: e }))
     );
 };
+export const updateFieldFirebaseProfileUser = () => {
+    //const user = fb.firebase.auth().currentUser;
+};
+
+export const resetPassworProfileUser = (
+    email: string
+): Observable<IResponse<{}, string, IUser>> => {
+    return from(fb.firebase.auth().sendPasswordResetEmail(email)).pipe(
+        switchMap((res: any) => {
+            return of({ data: res });
+        }),
+        catchError((e) => of({ error: e }))
+    );
+};
 
 export const updateFieldUser = (
     userID: string,
@@ -119,7 +133,6 @@ export const updateFieldUser = (
             let id: string = '';
             let i = 0,
                 BreakException = {};
-
             try {
                 res.forEach(function (doc: { id: string }) {
                     id = doc.id;

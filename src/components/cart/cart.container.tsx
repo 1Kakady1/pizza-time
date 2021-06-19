@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { SCREENS_STACK, SCREENS } from '../../consts/screens';
 import { getCounterCounter, getTotalPrice } from '../../helpers/cart';

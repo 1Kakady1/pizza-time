@@ -4,7 +4,10 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { map } from 'rxjs/operators';
 import { toUserAction } from '../user/user.reducer';
 import { IUser } from '../user/user.model';
-import { IProfileUser } from '../../components/profile/state/profile.state.model';
+import {
+    IProfile,
+    IProfileUser
+} from '../../components/profile/state/profile.state.model';
 import { toProfileAction } from '../../components/profile/state/profile.state.reducer';
 
 export const setProfileEffect = (
@@ -27,14 +30,12 @@ export const setProfileEffect = (
         })
     );
 
-// export const outProfileEffect = (
-//     action$: ActionsObservable<PayloadAction<IUser>>
-// ): Observable<PayloadAction<IProfileUser>> =>
-//     action$.pipe(
-//         ofType(
-//             toUserAction.logoutRequestSuccess.type
-//         ),
-//         map(() => {
-//             return toProfileAction.outProfile();
-//         })
-// );
+export const outProfileEffect = (
+    action$: ActionsObservable<PayloadAction>
+): Observable<PayloadAction> =>
+    action$.pipe(
+        ofType(toUserAction.logoutRequestSuccess.type),
+        map(() => {
+            return toProfileAction.outProfile();
+        })
+    );

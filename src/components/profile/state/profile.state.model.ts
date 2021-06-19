@@ -1,5 +1,5 @@
 export interface IProfile {
-    orders: [];
+    orders: any[];
     isAuth: boolean;
     error: string;
     user: IProfileUser;

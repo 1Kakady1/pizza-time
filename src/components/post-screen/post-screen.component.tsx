@@ -10,6 +10,7 @@ import { CardVerical } from '../card/card-vertical/card-verical.component';
 import TextTicker from 'react-native-text-ticker';
 import { CartPanelContainer } from '../cart-panel/cart-panel.container';
 import { getPrice } from '../../helpers/cart';
+import GallerySwiper from 'react-native-gallery-swiper';
 
 export const PostItem = ({
     post,
@@ -26,6 +27,9 @@ export const PostItem = ({
     const dataSlider = createDataSlide(sliderData, 4);
     const price = getPrice(post.price, post.filters.size, size);
     const ref = React.useRef<ScrollView>(null);
+    const gallary = post.gallary
+        ? (post.gallary as string[]).map((item) => ({ uri: item }))
+        : undefined;
 
     React.useEffect(() => {
         ref && ref.current && ref.current.scrollTo({ y: 0 });
@@ -104,6 +108,12 @@ export const PostItem = ({
                     <Text style={styles.h1}>Это часто берут:</Text>
                 </View>
 
+                {/* {   gallary &&
+                        <GallerySwiper
+                            images={[...gallary]}
+                        />
+                } */}
+
                 <Slick
                     style={styles.wrapper}
                     showsButtons={false}
@@ -134,6 +144,7 @@ export const PostItem = ({
                     })}
                 </Slick>
             </ScrollView>
+
             {!isLoad && (
                 <CartPanelContainer
                     item={{

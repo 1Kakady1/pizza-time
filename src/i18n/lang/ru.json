@@ -6,6 +6,7 @@
     "error.req" :"Необходимо заполнить это поле",
     "error.email":"Некорректный email",
     "error.confirmation":"Пароли не совпадают",
+    "error.min":"Минимальная длина 4",
     "error.phone":"Введите правельный номер",
     "msg.modal.error":"Проверьте введенные данные",
     "email.label": "Email",
@@ -50,5 +51,15 @@
     "user.profile": "Профиль",
     "cat.all": "Все",
     "cat.drinks": "Напитки",
-    "cat.pizza": "Пицца"
+    "cat.pizza": "Пицца",
+    "user.email": "Email",
+    "user.name": "Имя",
+    "user.address": "Адрес",
+    "user.phone": "Телефон",
+    "profile.change": "Изменить даные",
+    "profile.save.success": "{{field}} успешно изменено",
+    "profile.save.error": "Ошибка. {{field}} не изменено",
+    "label.reset.password": "Запрос о смене пароля",
+    "profile.reset.success": "Информация отправлена на почту",
+    "profile.reset.error": "Ошибка"
 }

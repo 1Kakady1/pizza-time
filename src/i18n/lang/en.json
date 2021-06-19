@@ -6,6 +6,7 @@
     "error.req" :"This field is required",
     "error.email":"Incorrect email",
     "error.confirmation":"Passwords must match",
+    "error.min":"Min lenght 4",
     "error.phone":"Phone number is not valid",
     "msg.modal.error":"Check the entered data",
     "email.label": "Email",
@@ -50,5 +51,14 @@
     "user.profile": "Profile",
     "cat.all": "All",
     "cat.drinks": "Drinks",
-    "cat.pizza": "Pizza"
+    "cat.pizza": "Pizza",
+    "user.email": "Email",
+    "user.name": "Name",
+    "user.address": "Address",
+    "user.phone": "Phone",
+    "profile.change": "Change info",
+    "profile.save.success": "{{field}} успешно изменено",
+    "profile.save.error": "Ошибка. {{field}} не изменено",
+    "label.reset.password": "Запрос о смене пароля",
+    "profile.resaet.success": "Информация отправлена на почту"
 }

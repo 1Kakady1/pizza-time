@@ -10,7 +10,6 @@ import { IOrderForm, IOrderProps } from './order.model';
 import { datetimeSplit, dd } from '../../helpers/functions';
 import * as Animatable from 'react-native-animatable';
 import { ScrollView } from 'react-native-gesture-handler';
-import { values } from 'lodash';
 
 export const Order = ({
     cart,

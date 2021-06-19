@@ -9,6 +9,7 @@ export const profileInit: IProfile = {
         phone: '',
         name: '',
         address: '',
-        userID: ''
+        userID: '',
+        preview: undefined
     }
 };

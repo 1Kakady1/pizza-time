@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@firebase/storage": "^0.4.5",
+    "@mdi/js": "^5.9.55",
     "@react-native-community/datetimepicker": "2.4.0",
     "@react-native-community/masked-view": "0.1.10",
     "@react-native-masked-view/masked-view": "^0.2.0",
@@ -44,6 +45,7 @@
     "react-native-dropdownalert": "^4.3.0",
     "react-native-elements": "^2.3.2",
     "react-native-flash-message": "^0.1.16",
+    "react-native-gallery-swiper": "^1.26.4",
     "react-native-gesture-handler": "~1.6.0",
     "react-native-masked-text": "^1.13.0",
     "react-native-modal": "^11.6.1",
