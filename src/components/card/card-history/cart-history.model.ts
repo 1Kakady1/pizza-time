@@ -1,12 +1,10 @@
+import { IHistoryProducts } from '../../history/state/history.state.model';
 import { ICartComments, ICartItem } from '../../cart/state/cart.state.model';
 
-export interface ICardCart {
-    data: ICartItem;
-    onAdd?: (item: ICartItem, size: string) => void;
-    onSub?: (item: ICartItem, size: string) => void;
+export interface ICartHistory {
+    data: IHistoryProducts;
     height?: string | number;
     width?: string | number;
-    numberOfLines?: number;
     onLongPress?: (value: { id: string; size: string }) => void;
     onChangeComments?: (value: ICartComments) => void;
 }

@@ -14,6 +14,7 @@ export interface ICardHorizontal {
     height?: string | number;
     width?: string | number;
     numberOfLines?: number;
+    hideButton?: boolean;
 }
 
 export interface ICardHorizontalPlaceholder {

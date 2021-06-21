@@ -6,7 +6,8 @@ export const SCREENS = {
     auth: 'AuthScreen',
     cart: 'CartScreen',
     order: 'OrderScreen',
-    registration: 'RegistrationScreen'
+    registration: 'RegistrationScreen',
+    history: 'HistoryScreen'
 };
 export const SCREENS_STACK = {
     drawer: 'DrawerScreen',

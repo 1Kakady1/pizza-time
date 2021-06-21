@@ -2,9 +2,11 @@ import { from, Observable, of } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
 import { ICartItem } from '../components/cart/state/cart.state.model';
 import { ICatList } from '../components/cat/state/cat.state.model';
+import { IHistoryProducts } from '../components/history/state/history.state.model';
 import { IOrderForm } from '../components/order/order.model';
 import { IProducts } from '../components/products/state/products.state.model';
 import { fb } from '../firebase/firebase';
+import { timeConverterUNIX } from '../helpers/functions';
 import {
     IUser,
     IUserActionProps,
@@ -214,6 +216,36 @@ export const getProducts = (
     );
 };
 
+export const getHistory = (
+    userID: string,
+    limit: number = 4
+): Observable<IResponse<{}, string, IHistoryProducts[]>> => {
+    return from(
+        fb.dbh
+            .collection('orders')
+            .where('userID', '==', userID)
+            .limit(limit)
+            .get()
+    ).pipe(
+        switchMap((res: any) => {
+            let data: IHistoryProducts[] = [];
+
+            res.forEach(function (doc: any) {
+                const item = doc.data();
+                data.push({
+                    products: item.products,
+                    date: timeConverterUNIX(item.date).dateTime,
+                    id: doc.id
+                });
+            });
+            return of({ data });
+        }),
+        catchError((e) => {
+            return of({ error: e });
+        })
+    );
+};
+
 export const addOrder = (
     orderInfo: IOrderForm,
     products: ICartItem[],
@@ -227,7 +259,8 @@ export const addOrder = (
             date: orderInfo.date,
             comments: orderInfo.comments,
             address: orderInfo.address,
-            products
+            products,
+            userID: orderInfo.userID
         })
     ).pipe(
         switchMap((res: any) => {

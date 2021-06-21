@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { IRefereceInput } from '../../field-factory.model';
 import {
@@ -41,7 +41,9 @@ export const InputText = (props: IRefereceInput) => {
                         ? true
                         : false
                 }
-            ></Button>
+            >
+                <Text style={{ display: 'none', fontSize: 0 }}>text</Text>
+            </Button>
             <Animatable.Text
                 animation={props.error && props.touched ? zoomIn : zoomOut}
                 style={styles.inputError}

@@ -42,7 +42,7 @@ export const ProfileForm = ({
                     fieldUpdateUser(param, fieldName, values[fieldName])
                         .then(() => {
                             if (fieldSetting.type === 'password') {
-                                onSignOut();
+                                setTimeout(() => onSignOut(), 2000);
                             } else {
                                 onStoreUptField(values[fieldName], fieldName);
                             }

@@ -27,6 +27,7 @@ import {
     userCheckRememberEffect,
     userLogoutEffect
 } from './user/user.effect';
+import { setHistoryProducts } from '../components/history/state/history.state..effect';
 
 const rootEpic = combineEpics(
     userSetEffect,
@@ -48,7 +49,8 @@ const rootEpic = combineEpics(
     setCurrentCatEffect,
     setShareInfoEffect,
     setProfileEffect,
-    outProfileEffect
+    outProfileEffect,
+    setHistoryProducts
 );
 
 export default rootEpic;

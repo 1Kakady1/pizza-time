@@ -29,6 +29,12 @@ export const ProfileContainer = () => {
             }
         });
     };
+    const goHistory = () => {
+        nav.navigate(SCREENS_STACK.modal, {
+            screen: SCREENS.history,
+            params: {}
+        });
+    };
     const onSignOut = () => {
         dispatch(toUserAction.logoutRequest());
         goHome();
@@ -42,6 +48,7 @@ export const ProfileContainer = () => {
                 fieldUpdateUser={fieldUpdateUser}
                 updateProfileField={updateProfileField}
                 onSignOut={onSignOut}
+                goHistory={goHistory}
             />
         )
     );

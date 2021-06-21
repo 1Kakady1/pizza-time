@@ -24,7 +24,8 @@ export const Profile = ({
     store,
     fieldUpdateUser,
     updateProfileField,
-    onSignOut
+    onSignOut,
+    goHistory
 }: IProfileProps) => {
     const styles = stylesProfile;
     const [selectedImage, setSelectedImage] = useState<string>('');
@@ -158,7 +159,7 @@ export const Profile = ({
                             icon={'history'}
                             color={'#fff'}
                             size={28 * sizeOffset()}
-                            onPress={() => true}
+                            onPress={goHistory}
                         />
                     </Animatable.View>
                 </View>

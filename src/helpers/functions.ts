@@ -18,6 +18,41 @@ export const datetimeSplit = (date?: Date) => {
         timezoneOffset: a.getTimezoneOffset()
     };
 };
+export function timeConverterUNIX(UNIX_timestamp: number, months?: string[]) {
+    const a = new Date(UNIX_timestamp * 1000);
+    const monthsArr = months || [
+        '01',
+        '02',
+        '03',
+        '04',
+        '05',
+        '06',
+        '07',
+        '08',
+        '09',
+        '10',
+        '11',
+        '12'
+    ];
+    return {
+        year: a.getFullYear(),
+        month: monthsArr[a.getMonth()],
+        date: a.getDate(),
+        hour: a.getHours(),
+        min: a.getMinutes(),
+        sec: a.getSeconds(),
+        dateTime:
+            a.getDate() +
+            '.' +
+            monthsArr[a.getMonth()] +
+            '.' +
+            a.getFullYear() +
+            ' ' +
+            a.getHours() +
+            ':' +
+            a.getMinutes()
+    };
+}
 export const dataHeight = (h: number, key: string = 'key') => {
     const windowHeight = Dimensions.get('window').height;
     let arr = [],

@@ -1,14 +1,8 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { IRefereceInput } from '../../field-factory.model';
-import {
-    colorsInput,
-    stylesFactoryForm,
-    zoomIn,
-    zoomOut
-} from '../../field-factory.styles';
+import { colorsInput, stylesFactoryForm } from '../../field-factory.styles';
 
 export const InputReasetPassword = (props: IRefereceInput) => {
     const styles = stylesFactoryForm;
@@ -32,7 +26,9 @@ export const InputReasetPassword = (props: IRefereceInput) => {
                 style={styles.btn}
                 onPress={props.handleSubmitReference}
                 disabled={props.isLoad}
-            ></Button>
+            >
+                <Text style={{ display: 'none', fontSize: 0 }}>text</Text>
+            </Button>
         </View>
     );
 };

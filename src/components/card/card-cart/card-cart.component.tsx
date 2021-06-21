@@ -85,56 +85,69 @@ export const CardCart = ({
                         </View>
                     </View>
                     <View style={styles.colRight}>
-                        <TouchableOpacity
-                            style={styles.sizeBtn}
-                            onPress={() => {
-                                onSub(data, data.productSize);
-                            }}
-                        >
-                            <Text
-                                style={[styles.counterText, { color: '#fff' }]}
+                        {onSub && (
+                            <TouchableOpacity
+                                style={styles.sizeBtn}
+                                onPress={() => {
+                                    onSub(data, data.productSize);
+                                }}
                             >
-                                -
-                            </Text>
-                        </TouchableOpacity>
+                                <Text
+                                    style={[
+                                        styles.counterText,
+                                        { color: '#fff' }
+                                    ]}
+                                >
+                                    -
+                                </Text>
+                            </TouchableOpacity>
+                        )}
+
                         <View style={styles.counter}>
                             <Text style={styles.counterText}>{data.count}</Text>
                         </View>
-                        <TouchableOpacity
-                            style={styles.sizeBtn}
-                            onPress={() => onAdd(data, data.productSize)}
-                        >
-                            <Text
-                                style={[styles.counterText, { color: '#fff' }]}
+                        {onAdd && (
+                            <TouchableOpacity
+                                style={styles.sizeBtn}
+                                onPress={() => onAdd(data, data.productSize)}
                             >
-                                +
-                            </Text>
-                        </TouchableOpacity>
+                                <Text
+                                    style={[
+                                        styles.counterText,
+                                        { color: '#fff' }
+                                    ]}
+                                >
+                                    +
+                                </Text>
+                            </TouchableOpacity>
+                        )}
                     </View>
                 </View>
-                {onChangeComments && (
-                    <TextInput
-                        style={styles.input}
-                        mode={'outlined'}
-                        maxLength={120}
-                        label="Пожелания"
-                        value={data.comments || ''}
-                        theme={{
-                            colors: {
-                                placeholder: '#333939',
-                                text: '#333939',
-                                primary: '#333939'
-                            }
-                        }}
-                        onChangeText={(text) => {
+
+                <TextInput
+                    textAlign="left"
+                    style={styles.input}
+                    mode={'outlined'}
+                    maxLength={120}
+                    label="Пожелания"
+                    value={data.comments || ''}
+                    theme={{
+                        colors: {
+                            placeholder: '#333939',
+                            text: '#333939',
+                            primary: '#333939'
+                        }
+                    }}
+                    disabled={!onAdd}
+                    onChangeText={(text) => {
+                        onChangeComments &&
                             onChangeComments({
                                 id: data.id,
                                 size: data.productSize,
                                 comments: text
                             });
-                        }}
-                    />
-                )}
+                    }}
+                />
             </View>
         </TouchableOpacity>
     );

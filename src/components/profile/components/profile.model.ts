@@ -12,4 +12,5 @@ export interface IProfileProps {
     ) => Promise<IResponse<{}, string, IUser>>;
     updateProfileField: (data: string | [], field: string) => void;
     onSignOut: () => void;
+    goHistory: () => void;
 }

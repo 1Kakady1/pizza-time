@@ -60,5 +60,6 @@
     "profile.save.success": "{{field}} успешно изменено",
     "profile.save.error": "Ошибка. {{field}} не изменено",
     "label.reset.password": "Запрос о смене пароля",
-    "profile.resaet.success": "Информация отправлена на почту"
+    "profile.resaet.success": "Информация отправлена на почту",
+    "history": "История заказов"
 }

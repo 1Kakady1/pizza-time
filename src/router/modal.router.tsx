@@ -4,6 +4,7 @@ import Post from '../screen/post/post.component';
 import { SCREENS } from '../consts/screens';
 import { horizontalAnimation } from '../helpers/screen';
 import { Order } from '../screen/order/order.component';
+import { HistoryScreen } from '../screen/history/history.component';
 
 const ModalStack = createStackNavigator();
 
@@ -16,6 +17,10 @@ export const ModalScreen = () => {
         >
             <ModalStack.Screen name={SCREENS.postItem} component={Post} />
             <ModalStack.Screen name={SCREENS.order} component={Order} />
+            <ModalStack.Screen
+                name={SCREENS.history}
+                component={HistoryScreen}
+            />
         </ModalStack.Navigator>
     );
 };
