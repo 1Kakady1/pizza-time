@@ -62,5 +62,6 @@
     "label.reset.password": "Запрос о смене пароля",
     "profile.reset.success": "Информация отправлена на почту",
     "profile.reset.error": "Ошибка",
-    "history": "История заказов"
+    "history": "История заказов",
+    "date": "Дата"
 }

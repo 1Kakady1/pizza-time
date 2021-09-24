@@ -3,5 +3,6 @@ export type screenRoute = {
     HomeScreen: undefined;
     PostItemScreen: {
         id: string;
+        size?: string;
     };
 };

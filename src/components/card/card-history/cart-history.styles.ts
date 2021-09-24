@@ -1,5 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 export const stylesCardHistory = StyleSheet.create({
-    container: {}
+    container: {},
+    date:{
+        fontWeight: "bold",
+        paddingBottom: 10,
+    }
 });

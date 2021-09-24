@@ -15,6 +15,5 @@ export const stylesHistory = StyleSheet.create({
     container: {
         margin: 10,
         position: 'relative',
-        paddingBottom: 80
     }
 });

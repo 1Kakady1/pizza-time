@@ -20,7 +20,7 @@ export const History = ({ orders, isLoad }: IHistoryProps) => {
                     contentContainerStyle={[styles.scrollView]}
                     data={orders}
                     renderItem={({ item }) => (
-                        <CardHistory data={item} height={170} />
+                        <CardHistory data={item} height={170}/>
                     )}
                     keyExtractor={(item) => item.id}
                     ItemSeparatorComponent={renderSeparatorDefault}

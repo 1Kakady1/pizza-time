@@ -18,3 +18,4 @@ yarn.lock
 yarn-error.log
 post-change/
 debug.log
+google-services.json

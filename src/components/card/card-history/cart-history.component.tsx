@@ -1,32 +1,35 @@
 import React from 'react';
-import { View, Image, Text, TouchableOpacity } from 'react-native';
-import TextTicker from 'react-native-text-ticker';
+import { View, Text } from 'react-native';
 import { ICartHistory } from './cart-history.model';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { primary, text } from '../../../consts/colors.const';
-import { TextInput } from 'react-native-paper';
 import { stylesCardHistory } from './cart-history.styles';
 import { CardCart } from '../card-cart/card-cart.component';
-import { ICartItem } from '../../cart/state/cart.state.model';
+import { useTranslation } from 'react-i18next';
+import { SCREENS, SCREENS_STACK } from '../../../consts/screens';
+import { useNavigation } from '@react-navigation/native';
 
 export const CardHistory = ({
     data,
     height = '100%',
     width = '100%',
-    onLongPress
 }: ICartHistory) => {
     const styles = stylesCardHistory;
-
+    const {t} = useTranslation();
+    const navigaion = useNavigation();
+    const nav = (id: string, size?: string) =>
+        navigaion.navigate(SCREENS_STACK.modal, {
+            screen: SCREENS.postItem,
+            params: { id , size}
+        });
     return (
         <View>
-            <Text>Date: {data.date}</Text>
+            <Text  style={[styles.date]}>{t("date")}: {data.date}</Text>
 
             {data.products.map((item) => (
                 <View
                     key={data.id + '-' + item.id}
                     style={{ paddingBottom: 20 }}
                 >
-                    <CardCart height={height} width={width} data={item} />
+                    <CardCart height={height} width={width} data={item} onPress={()=>nav(item.id, item.productSize)} />
                 </View>
             ))}
         </View>

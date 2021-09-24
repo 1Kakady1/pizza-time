@@ -61,5 +61,6 @@
     "profile.save.error": "Ошибка. {{field}} не изменено",
     "label.reset.password": "Запрос о смене пароля",
     "profile.resaet.success": "Информация отправлена на почту",
-    "history": "История заказов"
+    "history": "История заказов",
+    "date": "Date"
 }

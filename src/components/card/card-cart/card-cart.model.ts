@@ -9,4 +9,5 @@ export interface ICardCart {
     numberOfLines?: number;
     onLongPress?: (value: { id: string; size: string }) => void;
     onChangeComments?: (value: ICartComments) => void;
+    onPress?: (id: string, size?: string ) => void;
 }

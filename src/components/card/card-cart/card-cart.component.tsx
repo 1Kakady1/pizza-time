@@ -15,6 +15,7 @@ export const CardCart = ({
     onSub,
     onLongPress,
     onChangeComments,
+    onPress,
     numberOfLines = 3
 }: ICardCart) => {
     const styles = stylesCardCart;
@@ -29,6 +30,9 @@ export const CardCart = ({
                 onLongPress &&
                 onLongPress({ id: data.id, size: data.productSize })
             }
+            onPress={()=>{
+                onPress && onPress(data.id, data.productSize);
+            }}
         >
             <View style={[styles.itemRow, { height, width }]}>
                 <View style={[styles.item]}>

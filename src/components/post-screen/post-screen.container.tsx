@@ -34,7 +34,7 @@ export const PostItemContainer = () => {
         dispatch(
             toPostAction.postRequest({
                 id: route.params.id,
-                size: post?.filters.size[0] || ''
+                size: post?.filters?.size[0] || route.params.size || ''
             })
         );
     }, [route.params]);

@@ -7,4 +7,5 @@ export interface ICartHistory {
     width?: string | number;
     onLongPress?: (value: { id: string; size: string }) => void;
     onChangeComments?: (value: ICartComments) => void;
+    onPress?: (value: { id: string; size?: string }) => void;
 }
